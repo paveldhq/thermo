@@ -1,0 +1,93 @@
+openapi: 3.0.0
+servers:
+  - description: ESP32 Basic API contract
+    url: https://virtserver.swaggerhub.com/paveldhq/thermo-esp32/1.0.0
+info:
+  version: "1.0.0"
+  title: thermo-esp32
+  description: ESP32 API for FW update and WI-FI management
+paths:
+# // todo: add support for PIN 3-6 digit code, default 0000
+#  /identity:
+  /firmware:
+    post:
+      tags:
+       - Firmware
+      description: Updates firmware
+      operationId: updateFirmware
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                fileName:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: File uploaded
+  /wifi/list:
+    get:
+      description: Returs list of available APs
+      responses:
+        '200':
+          description: All visible APs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WifiSettings'
+                  
+  /wifi/settings:
+    get:
+      description: Returns current wifi settings
+      responses:
+        '200':
+          description: Current settings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WifiSettings'
+    post:
+      requestBody:
+        description: Sets cerrent settings
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WifiSettings'
+      responses:
+        '201':
+          description: Applied
+    delete:
+      description: Clears current wifi settings
+      responses:
+        '200':
+          description: Resets settings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WifiSettings'
+components:
+  schemas:
+    WifiModeType:
+      type: string
+      enum: [client, ap]
+    
+    WifiProtectionType:
+      type: string
+      enum: [none, wep, wpa]
+    
+    WifiSettings:
+      type: object
+      properties:
+        mode:
+          $ref: '#/components/schemas/WifiModeType'
+        protection:
+          $ref: '#/components/schemas/WifiProtectionType'
+        ssid:
+          type: string
+        password:
+          type: string
