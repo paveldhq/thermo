@@ -1,0 +1,16 @@
+{
+  "name": "thermo/cli",
+  "description": "cli utility to download and build {{arduino-cli}}",
+  "autoload": {
+    "psr-4": {
+      "Thermo\\": "Thermo"
+    }
+  },
+  "require": {
+    "symfony/console": "~5",
+    "symfony/yaml": "~5",
+    "guzzlehttp/guzzle": "~6",
+    "knplabs/github-api": "~2",
+    "php-http/guzzle6-adapter": "^1.1"
+  }
+}

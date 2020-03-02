@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+/**
+ * The very first bootstrap file.
+ *
+ * Checks if autoload script exists and executes {{composer install}} if needed.
+ *
+ * Then executes {{Thermo\Bootstrap::boot}}
+ */
+
+use Thermo\Bootstrap;
+
+error_reporting(E_ALL);
+chdir(__DIR__);
+
+defined('AUTOLOAD_FILE')
+|| define('AUTOLOAD_FILE', 'vendor/autoload.php');
+
+if (!file_exists(AUTOLOAD_FILE)) {
+    echo "--> Autoload file does not exists..." . PHP_EOL;
+    shell_exec('composer install');
+} else {
+    shell_exec('composer update');
+}
+
+echo "--> Turning on magic..." . PHP_EOL;
+require_once AUTOLOAD_FILE;
+
+Bootstrap::boot();
