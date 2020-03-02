@@ -29,7 +29,7 @@ class DeployArduinoCliCommand extends Command
 
     protected function copyr($source, $dest)
     {
-        mkdir($dest, 0777);
+        mkdir($dest, 0777, true);
         foreach (
             $iterator = new RecursiveIteratorIterator(
                 new RecursiveDirectoryIterator(

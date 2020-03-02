@@ -20,10 +20,10 @@ if (!file_exists(AUTOLOAD_FILE)) {
     echo "--> Autoload file does not exists..." . PHP_EOL;
     shell_exec('composer install');
 } else {
-    shell_exec('composer update');
+    // shell_exec('composer update');
 }
 
-echo "--> Turning on magic..." . PHP_EOL;
+//echo "--> Turning on magic..." . PHP_EOL;
 require_once AUTOLOAD_FILE;
 
 Bootstrap::boot();

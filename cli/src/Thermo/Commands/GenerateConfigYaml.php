@@ -28,9 +28,9 @@ class GenerateConfigYaml extends Command
             'port' => '50051'
         ],
         'directories' => [
-            'data' => '%ARDUINO_DIR%',
+            'data' => '%ARDUINO_DIR%/data',
             'downloads' => '%ARDUINO_DIR%/staging',
-            'user' => '%ARDUINO_DIR%'
+            'user' => '%ARDUINO_DIR%/user'
         ],
         'logging' => [
             'file' => '',

@@ -3,7 +3,7 @@
   "description": "cli utility to download and build {{arduino-cli}}",
   "autoload": {
     "psr-4": {
-      "Thermo\\": "Thermo"
+      "Thermo\\": "src/Thermo"
     }
   },
   "require": {
