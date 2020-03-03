@@ -9,7 +9,7 @@
 #ifdef ESP32
   #include <ESPmDNS.h>
   #include <WiFi.h>
-  #include <AsyncTCP.h>
+  #include "AsyncTCP.h"
 #elif defined(ESP8266)
   #include <ESP8266WiFi.h>
   #include <ESPAsyncTCP.h>
@@ -17,7 +17,7 @@
 #endif
 
 #include <ESPAsyncWebServer.h>
-#include <SPIFFSEditor.h>
+//#include <SPIFFSEditor.h>
 
 #ifndef THERMO_VERSION
   #define THERMO_VERSION "0.0.1"
@@ -108,4 +108,5 @@ void setup(void) {
 void loop(void) {
   //server.handle();
   delay(1);
+  wifiSettings.
 }

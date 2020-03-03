@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
-. "$(dirname $0)/.env"
+SELF="$0"
+. "$(dirname ${SELF})/.env"
 
 function logStr() {
   SEVERITY=$1
@@ -40,7 +40,7 @@ PROJ_DIR=$(dirname $0) && cd ${PROJ_DIR} && PROJ_DIR=$(pwd)
 CLI_DIR=${PROJ_DIR}/cli
 ENV_DIR=${CLI_DIR}/env
 A_CLI_SRC_DIR=${PROJ_DIR}/build-tools/src
-ARDUINO_DIR=${PROJ_DIR}/build-tools/arduino
+ARDUINO_DIR=build-tools/arduino
 
 function getCLI() {
   # First Obtain "kernel" name
@@ -68,23 +68,8 @@ function checkDependencies() {
   done
 }
 
-function goDir() {
-  if [[ ! -d "$1" ]]; then
-    mkdir -p "$1"
-  fi
-  cd "$1"
-}
-
 function pConsole() {
-  local PHP_CLI_IMAGE="thermo/cli:${THERMO_VERSION}"
-
-  if [[ -z "$(docker images -q ${PHP_CLI_IMAGE})" ]]; then
-    cd "${ENV_DIR}"
-    docker build -t=${PHP_CLI_IMAGE} -f Dockerfile .
-  fi
-
-  docker run --rm --name thermo-cli -v ${PROJ_DIR}:/project ${PHP_CLI_IMAGE} $@
-
+  ${CLI_DIR}/app.sh $@
 }
 
 function tryGetArduinoCli() {
@@ -125,13 +110,48 @@ if [[ ! -d ${ARDUINO_DIR} ]]; then
 fi
 
 pConsole generate-yaml-config ${ARDUINO_DIR}
+cd ${PROJ_DIR}
 
 A_CLI="${CLI_EXECUTABLE_BINARY} --config-file ${PROJ_DIR}/build-tools/arduino-cli.yaml"
+A_CLI="${CLI_EXECUTABLE_BINARY}"
 
-if [[ ${NEED_BOARD_INSTALL} == "1" ]]; then
-  ${A_CLI} core update-index
-  ${A_CLI} core download esp32:esp32
-  ${A_CLI }core download esp8266:esp8266
+if [[ "$1" == "reset" ]]; then
+  debug "Resetting..."
+  rm -rf ${PROJ_DIR}/build-tools
+  rm -rf ${PROJ_DIR}/cli/vendor
+  debug "Done."
+  exit 0
 fi
 
-${A_CLI} "$@"
+function initArduino() {
+  ${SELF} core update-index
+}
+
+function addBoard() {
+  ${SELF} core download "$1"
+  ${SELF} core install "$1"
+}
+
+if [[ "$1" == 'init-arduino-dir' ]]; then
+  initArduino
+  ${SELF} add-board esp32:esp32
+  ${SELF} add-board esp8266:esp8266
+  exit $?
+fi
+
+if [[ "$1" == 'add-board' ]]; then
+  shift
+  addBoard $1
+  exit $?
+fi
+
+if [[ ${NEED_BOARD_INSTALL} == "1" ]]; then
+  ${SELF} init-arduino-dir
+fi
+
+if [[ "$1" == "build" ]]; then
+  ${SELF} compile --fqbn esp32:esp32:esp32
+  exit $?
+fi
+
+${A_CLI} $@

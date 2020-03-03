@@ -3,3 +3,5 @@
 build-tools
 vendor
 composer.lock
+arduino-cli.yaml
+

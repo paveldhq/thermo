@@ -1,29 +1,67 @@
 #!/usr/bin/env php
 <?php
-/**
- * The very first bootstrap file.
- *
- * Checks if autoload script exists and executes {{composer install}} if needed.
- *
- * Then executes {{Thermo\Bootstrap::boot}}
- */
 
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Thermo\Bootstrap;
 
-error_reporting(E_ALL);
-chdir(__DIR__);
+(new class() {
 
-defined('AUTOLOAD_FILE')
-|| define('AUTOLOAD_FILE', 'vendor/autoload.php');
+    /**
+     * @var ContainerInterface
+     */
+    private ContainerInterface $container;
 
-if (!file_exists(AUTOLOAD_FILE)) {
-    echo "--> Autoload file does not exists..." . PHP_EOL;
-    shell_exec('composer install');
-} else {
-    // shell_exec('composer update');
-}
+    const CONFIG_FILE_DEFAULT = 'config.yml';
 
-//echo "--> Turning on magic..." . PHP_EOL;
-require_once AUTOLOAD_FILE;
+    /**
+     * @param string $configFile
+     */
+    private function diInit(string $configFile = self::CONFIG_FILE_DEFAULT): void
+    {
+        $this->container = new ContainerBuilder();
 
-Bootstrap::boot();
+        (new YamlFileLoader($this->container, new  FileLocator(CONFIG_DIR)))
+            ->load($configFile);
+    }
+
+    private function constantsInit(): void
+    {
+        // chdir(__DIR__);
+
+        defined('CONFIG_DIR')
+        || define('CONFIG_DIR', vsprintf('%s/config', [__DIR__]));
+
+        defined('AUTOLOAD_FILE')
+        || define('AUTOLOAD_FILE', 'vendor/autoload.php');
+
+        error_reporting(E_ALL);
+    }
+
+    private function autoloadInit(): void
+    {
+        if (!file_exists(AUTOLOAD_FILE)) {
+            echo "--> Autoload file does not exists..." . PHP_EOL;
+            shell_exec('composer install');
+        } else {
+            // shell_exec('composer update');
+        }
+    }
+
+    public function __construct()
+    {
+        $this->constantsInit();
+        $this->autoloadInit();
+
+        /** @noinspection PhpIncludeInspection */
+        require_once AUTOLOAD_FILE;
+
+        $this->diInit();
+        $this
+            ->container
+            ->get('cli-app')
+            ->run();
+    }
+})();
