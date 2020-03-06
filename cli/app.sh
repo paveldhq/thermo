@@ -23,5 +23,6 @@ docker run \
   --rm \
   --name thermo-cli \
   -v ${PROJ_DIR}:/project \
+  -e PROJ_DIR="/project" \
   ${PHP_CLI_IMAGE} \
   $@

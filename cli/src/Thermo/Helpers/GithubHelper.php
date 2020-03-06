@@ -3,6 +3,8 @@
 namespace Thermo\Helpers;
 
 use Github\Client;
+use Thermo\Dto\RepositoryDescriptor;
+use Thermo\Traits\LoggerTrait;
 
 /**
  * Class GithubHelper
@@ -11,30 +13,29 @@ use Github\Client;
 class GithubHelper
 {
 
+    use LoggerTrait;
     /**
-     * @var string
+     * @var Client
      */
-    private string $repoUser = '';
+    private Client $client;
+    /**
+     * @var RepositoryDescriptor
+     */
+    private RepositoryDescriptor $repo;
 
-    /**
-     * @var string
-     */
-    private string $repoName = '';
-
-    /**
-     * @param string $repository
-     */
-    public function setRepo(string $repository): void
+    public function __construct(Client $client)
     {
-        list($repoUser, $repoName) = explode('/', $repository);
-
-        $this->repoUser = $repoUser;
-        $this->repoName = $repoName;
+        $this->setClient($client);
     }
 
-    private function getClient()
+    /**
+     * @param RepositoryDescriptor $repositoryDescriptor
+     * @return GithubHelper
+     */
+    public function setRepo(RepositoryDescriptor $repositoryDescriptor): self
     {
-        return new Client();
+        $this->repo = $repositoryDescriptor;
+        return $this;
     }
 
     /**
@@ -46,9 +47,28 @@ class GithubHelper
             ->getClient()
             ->api('repo')
             ->releases()
-            ->latest($this->repoUser, $this->repoName);
+            ->latest(
+                $this->repo->getRepoUser(),
+                $this->repo->getRepoName()
+            );
 
         return $release['tag_name'];
+    }
+
+    /**
+     * @return Client
+     */
+    public function getClient(): Client
+    {
+        return $this->client;
+    }
+
+    /**
+     * @param Client $client
+     */
+    public function setClient(Client $client): void
+    {
+        $this->client = $client;
     }
 
     /**
@@ -57,14 +77,40 @@ class GithubHelper
      */
     public function getTagTarballUri(string $targetTag): string
     {
-        $tags = $this->getClient()
-            ->api('repo')
-            ->tags($this->repoUser, $this->repoName);
-
-        foreach ($tags as $tag) {
+        foreach ($this->getRepoTags() as $tag) {
             if ($tag['name'] === $targetTag) {
                 return $tag['tarball_url'];
             }
         }
     }
+
+    /**
+     * @return array
+     */
+    private function getRepoTags(): array
+    {
+        return $this->getClient()
+                    ->api('repo')
+                    ->tags(
+                        $this->repo->getRepoUser(),
+                        $this->repo->getRepoName()
+                    );
+    }
+
+    /**
+     * @param string $branch
+     * @return string
+     */
+    public function getTarBallUriBranch($branch = 'master'): string
+    {
+        return vsprintf(
+            'https://github.com/%s/%s/tarball/%s',
+            [
+                $this->repo->getRepoUser(),
+                $this->repo->getRepoName(),
+                $branch
+            ]
+        );
+    }
+
 }

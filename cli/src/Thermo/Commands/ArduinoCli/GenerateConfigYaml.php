@@ -1,6 +1,6 @@
 <?php
 
-namespace Thermo\Commands;
+namespace Thermo\Commands\ArduinoCli;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -27,7 +27,7 @@ class GenerateConfigYaml extends Command
     public function __construct(string $placeholder, string $configFileName)
     {
         parent::__construct(null);
-        $this->placeholder = $placeholder;
+        $this->placeholder    = $placeholder;
         $this->configFileName = $configFileName;
     }
 
@@ -43,7 +43,7 @@ class GenerateConfigYaml extends Command
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
      * @return int
      */

@@ -7,10 +7,33 @@ use Symfony\Component\Yaml\Yaml;
 class ConfigProcessor implements ProcessorInterface
 {
     /**
+     * Config template.
+     */
+    const YAML_CONFIG_TEMPLATE = [
+        'board_manager' => [
+            'additional_urls' => [
+                'https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json',
+                'https://arduino.esp8266.com/stable/package_esp8266com_index.json'
+            ]
+        ],
+        'daemon'        => [
+            'port' => '50051'
+        ],
+        'directories'   => [
+            'data'      => '%ARDUINO_DIR%/data',
+            'downloads' => '%ARDUINO_DIR%/staging',
+            'user'      => '%ARDUINO_DIR%/user'
+        ],
+        'logging'       => [
+            'file'   => '',
+            'format' => 'text',
+            'level'  => 'info'
+        ],
+    ];
+    /**
      * @var string
      */
     private string $placeholder;
-
     /**
      * @var string
      */
@@ -21,31 +44,6 @@ class ConfigProcessor implements ProcessorInterface
         $this->placeholder = $placeholder;
         $this->replacement = $replacement;
     }
-
-    /**
-     * Config template.
-     */
-    const YAML_CONFIG_TEMPLATE = [
-        'board_manager' => [
-            'additional_urls' => [
-                'https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json',
-                'https://arduino.esp8266.com/stable/package_esp8266com_index.json'
-            ]
-        ],
-        'daemon' => [
-            'port' => '50051'
-        ],
-        'directories' => [
-            'data' => '%ARDUINO_DIR%/data',
-            'downloads' => '%ARDUINO_DIR%/staging',
-            'user' => '%ARDUINO_DIR%/user'
-        ],
-        'logging' => [
-            'file' => '',
-            'format' => 'text',
-            'level' => 'info'
-        ],
-    ];
 
     /**
      * @param $value
