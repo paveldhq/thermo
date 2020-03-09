@@ -22,6 +22,4 @@ trait ArduinoCommandTrait
         $this->setName(vsprintf('%s:%s', [$this->commandPrefix, static::COMMAND_NAME]));
         parent::configure();
     }
-
-
 }

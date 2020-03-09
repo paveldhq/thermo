@@ -70,13 +70,29 @@ function checkDependencies() {
 
 function pConsole() {
   ${CLI_DIR}/app.sh $@
+  if [[ 0 -lt $? ]]; then
+    exit $?
+  fi
 }
 
 function tryGetArduinoCli() {
   if [[ ! -d "${A_CLI_SRC_DIR}" ]]; then
     local A_CLI_REPO="arduino/arduino-cli"
-    pConsole deploy ${A_CLI_REPO}
+    pConsole arduino:deploy ${A_CLI_REPO}
   fi
+}
+
+function buildArduinoCli() {
+  local BUILDER_TAG="arduino/cli:builder"
+  if [[ -z "$(docker images -q ${BUILDER_TAG})" ]]; then
+    cd "${A_CLI_SRC_DIR}/Dockerfiles/builder"
+    docker build -t=${BUILDER_TAG} .
+  fi
+
+  echo Moving to ${A_CLI_SRC_DIR}
+  cd ${A_CLI_SRC_DIR}
+  sleep 3
+  docker run --rm -v $PWD:/arduino-cli -w /arduino-cli -e PACKAGE_NAME_PREFIX='snapshot' ${BUILDER_TAG} goreleaser --rm-dist --snapshot --skip-publish
 }
 
 function boot() {
@@ -85,17 +101,8 @@ function boot() {
 }
 
 function init() {
-
   tryGetArduinoCli
-
-  cd ${A_CLI_SRC_DIR}/Dockerfiles/builder
-  docker build -t=arduino/cli:builder .
-  echo Moving to ${A_CLI_SRC_DIR}
-
-  cd ${A_CLI_SRC_DIR}
-  sleep 3
-  docker run --rm -v $PWD:/arduino-cli -w /arduino-cli -e PACKAGE_NAME_PREFIX='snapshot' arduino/cli:builder goreleaser --rm-dist --snapshot --skip-publish
-
+  buildArduinoCli
 }
 
 boot
@@ -109,7 +116,7 @@ if [[ ! -d ${ARDUINO_DIR} ]]; then
   NEED_BOARD_INSTALL="1"
 fi
 
-pConsole generate-yaml-config ${ARDUINO_DIR}
+pConsole arduino:config ${ARDUINO_DIR}
 cd ${PROJ_DIR}
 
 A_CLI="${CLI_EXECUTABLE_BINARY} --config-file ${PROJ_DIR}/build-tools/arduino-cli.yaml"

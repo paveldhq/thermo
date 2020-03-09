@@ -4,7 +4,7 @@ parameters:
   arduino-lib.src-dir: 'build-tools/arduino/user/libraries'
 
   arduino.dir-placeholder:  '%%ARDUINO_DIR%%'               # escaped %ARDUINO_DIR%
-  arduino.config-file:      '/project/arduino-cli.yaml'
+  arduino.config-file:      'arduino-cli.yaml'
 
   fs-helper.dir-mode: 0777
 
@@ -15,7 +15,7 @@ services:
     class:
       Monolog\Handler\StreamHandler
     arguments:
-     - '%logger.stream%'
+      - '%logger.stream%'
 
   logger:
     class: Monolog\Logger
@@ -23,9 +23,6 @@ services:
       - 'default'
     calls:
       - [ pushHandler, [ '@logger.handler.console' ] ]
-
-
-
 
   ext-srv.github-client:
     class: Github\Client
@@ -39,9 +36,8 @@ services:
       - [ setLogger, [ '@logger' ] ]
       - [ setDeployDir, [ '%arduino-cli.src-dir%' ] ]
 
-
-  command-arduino-cli-config:
-    class: Thermo\Commands\ArduinoCli\GenerateConfigYaml
+  command.arduino-cli-config:
+    class: Thermo\Commands\ArduinoCli\ConfigCommand
     arguments:
       - '%arduino.dir-placeholder%'
       - '%arduino.config-file%'
@@ -59,7 +55,7 @@ services:
     class: Symfony\Component\Console\Application
     calls:
       - [ add, [ '@command.arduino-cli.deploy' ] ]
-  #    - [ add, [ '@command-arduino-cli-config' ] ]
+      - [ add, [ '@command.arduino-cli-config' ] ]
       - [ add, [ '@command.ext-lib.add' ] ]
 
   helper-filesystem:
@@ -68,8 +64,6 @@ services:
       - '%fs-helper.dir-mode%'
     calls:
       - [ setLogger, [ '@logger' ] ]
-
-
 
   helper-github:
     class: Thermo\Helpers\GithubHelper

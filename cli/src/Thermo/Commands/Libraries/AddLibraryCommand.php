@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Thermo\Commands\Libraries;
-
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -34,24 +32,22 @@ class AddLibraryCommand extends RepositoryCommandAbstract
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->initDescriptor($input);
-
-        $this->getLogger()->debug(var_export($this->getDescriptor(), true));
-
         $this->tryFixTagName();
-
-
         $this->tryOverwriteDeployDir();
         $this->fsHelper->deploy($this->getDescriptor(), $this->getDeployDir());
-
         return 0;
     }
 
     protected function tryOverwriteDeployDir()
     {
         $this->setDeployDir(
-            vsprintf('%s/%s', [$this->getDeployDir(), str_replace('/', '_', $this->getDescriptor()->getRepository())])
+            vsprintf(
+                '%s/%s',
+                [
+                    $this->getDeployDir(),
+                    str_replace('/', '_', $this->getDescriptor()->getRepository())
+                ]
+            )
         );
     }
-
-
 }

@@ -9,11 +9,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Thermo\Processors\ConfigProcessor;
 
 /**
- * Class GenerateConfigYaml
+ * Class ConfigCommand
  * @package Thermo\Commands
  */
-class GenerateConfigYaml extends Command
+class ConfigCommand extends Command
 {
+    const COMMAND_NAME = 'config';
+    use ArduinoCommandTrait;
+
     /**
      * @var string
      */
@@ -36,8 +39,8 @@ class GenerateConfigYaml extends Command
      */
     protected function configure()
     {
+        $this->setName(vsprintf('%s:%s', [$this->commandPrefix, static::COMMAND_NAME]));
         $this
-            ->setName('generate-yaml-config')
             ->setDescription('Generates yaml config file for {{arduino-cli}}')
             ->addArgument('arduino-dir', InputArgument::REQUIRED, 'arduino base directory');
     }
@@ -50,11 +53,9 @@ class GenerateConfigYaml extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $arduinoDir = $input->getArgument('arduino-dir');
-        $output->writeln(vsprintf("Generating yaml file using %s as arduino home dir.", [$arduinoDir]));
-        $processor = new ConfigProcessor(
-            $this->placeholder, $input->getArgument('arduino-dir')
-        );
-        file_put_contents($this->configFileName, $processor->process());
+        $output->writeln(vsprintf('Generating yaml file using %s as arduino home dir.', [$arduinoDir]));
+        $processor = new ConfigProcessor($this->placeholder, $arduinoDir);
+        file_put_contents(vsprintf('%s/%s', [PROJ_DIR, $this->configFileName]), $processor->process());
         return 0;
     }
 }

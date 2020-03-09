@@ -5,7 +5,6 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Thermo\Bootstrap;
 
 (new class() {
 
@@ -18,19 +17,20 @@ use Thermo\Bootstrap;
 
     /**
      * @param string $configFile
+     * @return ContainerInterface
      */
-    private function diInit(string $configFile = self::CONFIG_FILE_DEFAULT): void
+    private function diInit(string $configFile = self::CONFIG_FILE_DEFAULT): ContainerInterface
     {
         $this->container = new ContainerBuilder();
 
         (new YamlFileLoader($this->container, new  FileLocator(CONFIG_DIR)))
             ->load($configFile);
+
+        return $this->container;
     }
 
     private function constantsInit(): void
     {
-        // chdir(__DIR__);
-
         defined('PROJ_DIR')
         || define('PROJ_DIR', getenv('PROJ_DIR'));
 
@@ -56,7 +56,7 @@ use Thermo\Bootstrap;
     private function checkProjDir()
     {
         if ('' === PROJ_DIR) {
-            die('pizdec');
+            die('PROJ_DIR environment variable should be set.');
         }
     }
 
@@ -69,10 +69,8 @@ use Thermo\Bootstrap;
         /** @noinspection PhpIncludeInspection */
         require_once AUTOLOAD_FILE;
 
-        $this->diInit();
-        $this
-            ->container
-            ->get('cli-app')
-            ->run();
+        $this->diInit()
+             ->get('cli-app')
+             ->run();
     }
 })();
