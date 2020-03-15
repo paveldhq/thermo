@@ -44,14 +44,14 @@ A_CLI_SRC_DIR=${PROJ_DIR}/build-tools/src
 ARDUINO_DIR=build-tools/arduino
 
 initOS() {
-	OS=$(uname -s)
-	case "$OS" in
-		Linux*) OS='Linux' ;;
-		Darwin*) OS='macOS' ;;
-		MINGW*) OS='Windows';;
-		MSYS*) OS='Windows';;
-	esac
-	echo "$OS"
+  OS=$(uname -s)
+  case "$OS" in
+  Linux*) OS='Linux' ;;
+  Darwin*) OS='macOS' ;;
+  MINGW*) OS='Windows' ;;
+  MSYS*) OS='Windows' ;;
+  esac
+  echo "$OS"
 }
 
 function getCLI() {
@@ -128,7 +128,14 @@ if [[ ! -f "${CLI_EXECUTABLE_BINARY}" ]]; then
 fi
 
 if [[ ! -d ${ARDUINO_DIR} ]]; then
+  debug "Creating directory ARDUINO_DIR=${ARDUINO_DIR}"
   mkdir -p "${ARDUINO_DIR}"
+  if [[ 0 != $? ]]; then
+    debug "Failed creating directory ${ARDUINO_DIR}"
+    cd ${PROJ_DIR}
+    ls -lah
+    exit 1
+  fi
   NEED_BOARD_INSTALL="1"
 fi
 
@@ -180,7 +187,7 @@ if [[ "$1" == "build" ]]; then
 fi
 
 if [[ "$1" == "install-external-libraries" ]]; then
-  for i in $(cat ./dependencies.txt) ; do
+  for i in $(cat ./dependencies.txt); do
     ./cli/app.sh ext-lib:install $i
   done
 fi
