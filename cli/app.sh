@@ -22,6 +22,7 @@ checkImage "${PHP_CLI_IMAGE}"
 docker run \
   --rm \
   --name thermo-cli \
+  --user $(id -u)
   -v ${PROJ_DIR}:/project \
   -e PROJ_DIR="/project" \
   ${PHP_CLI_IMAGE} \
