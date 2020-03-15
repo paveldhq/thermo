@@ -9,13 +9,27 @@ parameters:
   fs-helper.dir-mode: 0777
 
   logger.stream: 'php://output'
+  logger.formatter.date: "Y-m-d H:i:s"
+  logger.formatter.output: "[%%datetime%%] %%level_name%%: %%message%%\n"
+
+  curl.options: 'SsL'
 services:
+  logger.formatter:
+    class:
+      Monolog\Formatter\LineFormatter
+    arguments:
+      - '%logger.formatter.output%'
+      - '%logger.formatter.date%'
+      - true
+      - true
 
   logger.handler.console:
     class:
       Monolog\Handler\StreamHandler
     arguments:
       - '%logger.stream%'
+    calls:
+      - [ setFormatter, [ '@logger.formatter' ] ]
 
   logger:
     class: Monolog\Logger
@@ -62,6 +76,7 @@ services:
     class: Thermo\Helpers\FileSystemHelper
     arguments:
       - '%fs-helper.dir-mode%'
+      - '%curl.options%'
     calls:
       - [ setLogger, [ '@logger' ] ]
 

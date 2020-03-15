@@ -163,7 +163,7 @@ abstract class RepositoryCommandAbstract extends Command
     protected function tryFixTagName(): void
     {
         try {
-            $this->getLogger()->debug('No tag defiled,  searching for latest...');
+            $this->getLogger()->debug('No tag defiled, searching for latest...');
             if (null === $this->getDescriptor()->getTag()) {
                 $this->getDescriptor()
                      ->setTag(
@@ -180,8 +180,7 @@ abstract class RepositoryCommandAbstract extends Command
             );
         } catch (Exception $e) {
             if (null === $this->getDescriptor()->getTag()) {
-                $this->getLogger()->debug('No tag found,  downloading master branch...');
-                // get
+                $this->getLogger()->debug('No tag found, downloading master branch...');
                 $this->getDescriptor()->setUri($this->ghHelper->setRepo($this->getDescriptor())->getTarBallUriBranch());
             }
         }

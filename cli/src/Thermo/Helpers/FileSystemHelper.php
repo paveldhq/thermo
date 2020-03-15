@@ -24,12 +24,18 @@ class FileSystemHelper
     private int $dirMode;
 
     /**
+     * @var string
+     */
+    private string $cUrlFlags;
+
+    /**
      * FileSystemHelper constructor.
      * @param int $dirMode
      */
-    public function __construct(int $dirMode)
+    public function __construct(int $dirMode, string $cUrlFlags)
     {
-        $this->dirMode = $dirMode;
+        $this->dirMode   = $dirMode;
+        $this->cUrlFlags = $cUrlFlags;
     }
 
     public function deploy(RepositoryDescriptor $descriptor, string $deployDir): void
@@ -83,7 +89,7 @@ class FileSystemHelper
     private function getUnpackedSources(string $uri, string $destination): void
     {
         $this->tryMkDir($destination, $this->dirMode);
-        $execString = vsprintf('curl -L %s | tar -xz -C %s', [$uri, $destination]);
+        $execString = vsprintf('curl -%s %s | tar -xz -C %s', [$this->cUrlFlags, $uri, $destination]);
         shell_exec($execString);
     }
 
