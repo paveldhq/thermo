@@ -134,7 +134,7 @@ fi
 
 pConsole arduino:config ${ARDUINO_DIR}
 cd ${PROJ_DIR}
-
+chmod -Rf 0777 ./build-tools
 
 A_CLI="${CLI_EXECUTABLE_BINARY} --config-file ${PROJ_DIR}/build-tools/arduino-cli.yaml"
 A_CLI="${CLI_EXECUTABLE_BINARY}"
@@ -157,6 +157,7 @@ function addBoard() {
 }
 
 if [[ "$1" == 'init-arduino-dir' ]]; then
+  chmod -Rf 0777 "${PROJ_DIR}"
   initArduino
   ${SELF} add-board esp32:esp32
   ${SELF} add-board esp8266:esp8266
