@@ -188,7 +188,10 @@ fi
 
 if [[ "$1" == "install-external-libraries" ]]; then
   for i in $(cat ./dependencies.txt); do
-    ./cli/app.sh ext-lib:install $i
+    if [[ ! -z "$i" ]]; then
+      debug "Installing library: ${i}"
+      ./cli/app.sh ext-lib:install $i
+    fi
   done
 fi
 
