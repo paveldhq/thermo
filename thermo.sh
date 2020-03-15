@@ -37,6 +37,7 @@ CUR_DIR=$(pwd)
 
 # Pather placeholders
 PROJ_DIR=$(dirname $0) && cd ${PROJ_DIR} && PROJ_DIR=$(pwd)
+chmod -Rf 0777 .
 CLI_DIR=${PROJ_DIR}/cli
 ENV_DIR=${CLI_DIR}/env
 A_CLI_SRC_DIR=${PROJ_DIR}/build-tools/src
@@ -133,6 +134,7 @@ fi
 
 pConsole arduino:config ${ARDUINO_DIR}
 cd ${PROJ_DIR}
+
 
 A_CLI="${CLI_EXECUTABLE_BINARY} --config-file ${PROJ_DIR}/build-tools/arduino-cli.yaml"
 A_CLI="${CLI_EXECUTABLE_BINARY}"
