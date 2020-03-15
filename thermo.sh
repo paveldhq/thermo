@@ -42,17 +42,32 @@ ENV_DIR=${CLI_DIR}/env
 A_CLI_SRC_DIR=${PROJ_DIR}/build-tools/src
 ARDUINO_DIR=build-tools/arduino
 
+initOS() {
+	OS=$(uname -s)
+	case "$OS" in
+		Linux*) OS='Linux' ;;
+		Darwin*) OS='macOS' ;;
+		MINGW*) OS='Windows';;
+		MSYS*) OS='Windows';;
+	esac
+	echo "$OS"
+}
+
 function getCLI() {
-  # First Obtain "kernel" name
-  KERNEL=$(uname -s)
+  OS=$(initOS)
   local CLI_EXECUTABLE_BINARY=""
-  if [ $KERNEL = "Darwin" ]; then
+  case "$OS" in
+  'Linux')
+    CLI_EXECUTABLE_BINARY="${A_CLI_SRC_DIR}/dist/arduino_cli_linux_amd64/arduino-cli"
+    ;;
+  'macOS')
     CLI_EXECUTABLE_BINARY="${A_CLI_SRC_DIR}/dist/arduino_cli_osx_darwin_amd64/arduino-cli"
-  elif [ $Nucleo = "Linux" ]; then
-    echo unknown...
-    exit 5
-    # // unknown ??
-  fi
+    ;;
+  'Windows')
+    CLI_EXECUTABLE_BINARY="${A_CLI_SRC_DIR}/dist/arduino_cli_windows_amd64/arduino-cli.exe"
+    ;;
+  esac
+
   echo ${CLI_EXECUTABLE_BINARY}
 }
 
@@ -159,6 +174,12 @@ fi
 if [[ "$1" == "build" ]]; then
   ${SELF} compile --fqbn esp32:esp32:esp32
   exit $?
+fi
+
+if [[ "$1" == "install-external-libraries" ]]; then
+  for i in $(cat ./dependencies.txt) ; do
+    ./cli/app.sh ext-lib:install $i
+  done
 fi
 
 ${A_CLI} $@

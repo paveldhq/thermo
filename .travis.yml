@@ -1,0 +1,12 @@
+language: bash
+services: docker
+script:
+  - ./thermo.sh
+  - ./thermo.sh install-external-libraries
+  - ./thermo.sh build
+notifications:
+  email:
+    recipients:
+      - pavel.dhq@gmail.com
+    on_success: change
+    on_failure: always

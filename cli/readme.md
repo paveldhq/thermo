@@ -21,3 +21,4 @@ A small console application written in PHP that allows to:
  * me-no-dev/ESPAsyncWebServer
  * me-no-dev/ESPAsyncTCP
  * me-no-dev/AsyncTCP
+ * bblanchon/ArduinoJson
