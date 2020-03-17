@@ -1,0 +1,76 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+
+(new class() {
+
+    /**
+     * @var ContainerInterface
+     */
+    private ContainerInterface $container;
+
+    const CONFIG_FILE_DEFAULT = 'config.yml';
+
+    /**
+     * @param string $configFile
+     * @return ContainerInterface
+     */
+    private function diInit(string $configFile = self::CONFIG_FILE_DEFAULT): ContainerInterface
+    {
+        $this->container = new ContainerBuilder();
+
+        (new YamlFileLoader($this->container, new  FileLocator(CONFIG_DIR)))
+            ->load($configFile);
+
+        return $this->container;
+    }
+
+    private function constantsInit(): void
+    {
+        defined('PROJ_DIR')
+        || define('PROJ_DIR', getenv('PROJ_DIR'));
+
+        defined('CONFIG_DIR')
+        || define('CONFIG_DIR', vsprintf('%s/config', [__DIR__]));
+
+        defined('AUTOLOAD_FILE')
+        || define('AUTOLOAD_FILE', 'vendor/autoload.php');
+
+        error_reporting(E_ALL);
+    }
+
+    private function autoloadInit(): void
+    {
+        if (!file_exists(AUTOLOAD_FILE)) {
+            echo "--> Autoload file does not exists..." . PHP_EOL;
+            shell_exec('composer install');
+        } else {
+            // shell_exec('composer update');
+        }
+    }
+
+    private function checkProjDir()
+    {
+        if ('' === PROJ_DIR) {
+            die('PROJ_DIR environment variable should be set.');
+        }
+    }
+
+    public function __construct()
+    {
+        $this->constantsInit();
+        $this->checkProjDir();
+        $this->autoloadInit();
+
+        /** @noinspection PhpIncludeInspection */
+        require_once AUTOLOAD_FILE;
+
+        $this->diInit()
+             ->get('cli-app')
+             ->run();
+    }
+})();

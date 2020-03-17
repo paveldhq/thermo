@@ -1,0 +1,88 @@
+parameters:
+
+  arduino-cli.src-dir: 'build-tools/src'
+  arduino-lib.src-dir: 'build-tools/arduino/user/libraries'
+
+  arduino.dir-placeholder:  '%%ARDUINO_DIR%%'               # escaped %ARDUINO_DIR%
+  arduino.config-file:      'arduino-cli.yaml'
+
+  fs-helper.dir-mode: 0777
+
+  logger.stream: 'php://output'
+  logger.formatter.date: "Y-m-d H:i:s"
+  logger.formatter.output: "[%%datetime%%] %%level_name%%: %%message%%\n"
+
+  curl.options: 'SsL'
+services:
+  logger.formatter:
+    class:
+      Monolog\Formatter\LineFormatter
+    arguments:
+      - '%logger.formatter.output%'
+      - '%logger.formatter.date%'
+      - true
+      - true
+
+  logger.handler.console:
+    class:
+      Monolog\Handler\StreamHandler
+    arguments:
+      - '%logger.stream%'
+    calls:
+      - [ setFormatter, [ '@logger.formatter' ] ]
+
+  logger:
+    class: Monolog\Logger
+    arguments:
+      - 'default'
+    calls:
+      - [ pushHandler, [ '@logger.handler.console' ] ]
+
+  ext-srv.github-client:
+    class: Github\Client
+
+  command.arduino-cli.deploy:
+    class: Thermo\Commands\ArduinoCli\DeployCommand
+    arguments:
+      - '@helper-github'
+      - '@helper-filesystem'
+    calls:
+      - [ setLogger, [ '@logger' ] ]
+      - [ setDeployDir, [ '%arduino-cli.src-dir%' ] ]
+
+  command.arduino-cli-config:
+    class: Thermo\Commands\ArduinoCli\ConfigCommand
+    arguments:
+      - '%arduino.dir-placeholder%'
+      - '%arduino.config-file%'
+
+  command.ext-lib.add:
+    class: Thermo\Commands\Libraries\AddLibraryCommand
+    arguments:
+      - '@helper-github'
+      - '@helper-filesystem'
+    calls:
+      - [ setLogger, [ '@logger' ] ]
+      - [ setDeployDir, [ '%arduino-lib.src-dir%' ] ]
+
+  cli-app:
+    class: Symfony\Component\Console\Application
+    calls:
+      - [ add, [ '@command.arduino-cli.deploy' ] ]
+      - [ add, [ '@command.arduino-cli-config' ] ]
+      - [ add, [ '@command.ext-lib.add' ] ]
+
+  helper-filesystem:
+    class: Thermo\Helpers\FileSystemHelper
+    arguments:
+      - '%fs-helper.dir-mode%'
+      - '%curl.options%'
+    calls:
+      - [ setLogger, [ '@logger' ] ]
+
+  helper-github:
+    class: Thermo\Helpers\GithubHelper
+    arguments:
+      - '@ext-srv.github-client'
+    calls:
+      - [ setLogger, [ '@logger' ] ]
