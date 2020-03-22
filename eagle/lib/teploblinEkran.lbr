@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -330,10 +330,10 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pin name="GND" x="-7.62" y="0" length="middle" rot="R90"/>
 <pin name="VCC" x="-10.16" y="0" length="middle" rot="R90"/>
 <pin name="T-IRO" x="22.86" y="0" length="middle" rot="R90"/>
-<pin name="SD-CS" x="5" y="35.72" length="middle" rot="R270"/>
-<pin name="MOSI" x="7.54" y="35.72" length="middle" rot="R270"/>
-<pin name="SD-MISO" x="10.08" y="35.72" length="middle" rot="R270"/>
-<pin name="SD-SCK" x="2.62" y="35.72" length="middle" rot="R270"/>
+<pin name="SD-MOSI" x="5" y="35.72" length="middle" rot="R270"/>
+<pin name="SD_MISO" x="7.54" y="35.72" length="middle" rot="R270"/>
+<pin name="SD-SCK" x="10.08" y="35.72" length="middle" rot="R270"/>
+<pin name="SD-СS" x="2.62" y="35.72" length="middle" rot="R270"/>
 <wire x1="-10.16" y1="5.08" x2="22.86" y2="5.08" width="0.1524" layer="94"/>
 <wire x1="22.86" y1="5.08" x2="22.86" y2="30.64" width="0.1524" layer="94"/>
 <wire x1="22.86" y1="30.64" x2="-10.16" y2="30.64" width="0.1524" layer="94"/>
@@ -434,13 +434,13 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="LED" pad="LED"/>
 <connect gate="G$1" pin="MISO" pad="SDO&lt;MISO&gt;"/>
-<connect gate="G$1" pin="MOSI" pad="SDI&lt;MOSI&gt;"/>
 <connect gate="G$1" pin="RESET" pad="RESET"/>
 <connect gate="G$1" pin="SCK" pad="SCK"/>
-<connect gate="G$1" pin="SD-CS" pad="SD_CS"/>
-<connect gate="G$1" pin="SD-MISO" pad="SD_MISO"/>
-<connect gate="G$1" pin="SD-SCK" pad="SD-SCK"/>
+<connect gate="G$1" pin="SD-MOSI" pad="SD_CS"/>
+<connect gate="G$1" pin="SD-SCK" pad="SD_MISO"/>
+<connect gate="G$1" pin="SD-СS" pad="SD-SCK"/>
 <connect gate="G$1" pin="SDI&lt;MOSI&gt;" pad="SD_MOSI"/>
+<connect gate="G$1" pin="SD_MISO" pad="SDI&lt;MOSI&gt;"/>
 <connect gate="G$1" pin="T-CLK" pad="T_CLK"/>
 <connect gate="G$1" pin="T-CS" pad="T_CS"/>
 <connect gate="G$1" pin="T-DIN" pad="T_DIN"/>
