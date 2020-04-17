@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.6.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -315,30 +315,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </package>
 </packages>
 <symbols>
-<symbol name="SKR">
-<pin name="D/C" x="0" y="0" length="middle" rot="R90"/>
-<pin name="SDI&lt;MOSI&gt;" x="2.54" y="0" length="middle" rot="R90"/>
-<pin name="SCK" x="5.08" y="0" length="middle" rot="R90"/>
-<pin name="LED" x="7.62" y="0" length="middle" rot="R90"/>
-<pin name="MISO" x="10.16" y="0" length="middle" rot="R90"/>
-<pin name="T-CLK" x="12.7" y="0" length="middle" rot="R90"/>
-<pin name="T-CS" x="15.24" y="0" length="middle" rot="R90"/>
-<pin name="T-DIN" x="17.78" y="0" length="middle" rot="R90"/>
-<pin name="T-DO" x="20.32" y="0" length="middle" rot="R90"/>
-<pin name="RESET" x="-2.54" y="0" length="middle" rot="R90"/>
-<pin name="CS" x="-5.08" y="0" length="middle" rot="R90"/>
-<pin name="GND" x="-7.62" y="0" length="middle" rot="R90"/>
-<pin name="VCC" x="-10.16" y="0" length="middle" rot="R90"/>
-<pin name="T-IRO" x="22.86" y="0" length="middle" rot="R90"/>
-<pin name="SD-CS" x="5" y="35.72" length="middle" rot="R270"/>
-<pin name="MOSI" x="7.54" y="35.72" length="middle" rot="R270"/>
-<pin name="SD-MISO" x="10.08" y="35.72" length="middle" rot="R270"/>
-<pin name="SD-SCK" x="2.62" y="35.72" length="middle" rot="R270"/>
-<wire x1="-10.16" y1="5.08" x2="22.86" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="22.86" y1="5.08" x2="22.86" y2="30.64" width="0.1524" layer="94"/>
-<wire x1="22.86" y1="30.64" x2="-10.16" y2="30.64" width="0.1524" layer="94"/>
-<wire x1="-10.16" y1="30.64" x2="-10.16" y2="5.08" width="0.1524" layer="94"/>
-</symbol>
 <symbol name="MLX90640ESF-BAB-000-TU">
 <wire x1="-10.16" y1="7.62" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
 <wire x1="-10.16" y1="-10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
@@ -420,40 +396,32 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <text x="-10.16" y="10.16" size="1.778" layer="95">&gt;NAME</text>
 <text x="-10.16" y="7.62" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="NEWILI9341">
+<pin name="T_IRQ" x="0" y="0" length="middle" rot="R90"/>
+<pin name="T_DO" x="2.54" y="0" length="middle" rot="R90"/>
+<pin name="T_DIN" x="5.08" y="0" length="middle" rot="R90"/>
+<pin name="T_CS" x="7.62" y="0" length="middle" rot="R90"/>
+<pin name="T_CKL" x="10.16" y="0" length="middle" rot="R90"/>
+<pin name="SDO&lt;MISO&gt;" x="12.7" y="0" length="middle" rot="R90"/>
+<pin name="TFT_LED" x="15.24" y="0" length="middle" rot="R90"/>
+<pin name="TFT_SCK" x="17.78" y="0" length="middle" rot="R90"/>
+<pin name="SDI&lt;MOSI&gt;" x="20.32" y="0" length="middle" rot="R90"/>
+<pin name="TFT_DC" x="22.86" y="0" length="middle" rot="R90"/>
+<pin name="TFT_RESET" x="25.4" y="0" length="middle" rot="R90"/>
+<pin name="TFT_CS" x="27.94" y="0" length="middle" rot="R90"/>
+<pin name="GND" x="30.48" y="0" length="middle" rot="R90"/>
+<pin name="VCC" x="33.02" y="0" length="middle" rot="R90"/>
+<pin name="SD_SCK" x="10.16" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO" x="12.7" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI" x="15.24" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS" x="17.78" y="38.1" length="middle" rot="R270"/>
+<wire x1="0" y1="5.08" x2="33.02" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="33.02" y1="5.08" x2="33.02" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="33.02" y1="33.02" x2="0" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="0" y1="33.02" x2="0" y2="5.08" width="0.1524" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
-<deviceset name="TFT.SPI.240X320">
-<gates>
-<gate name="G$1" symbol="SKR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SKR1">
-<connects>
-<connect gate="G$1" pin="CS" pad="CS"/>
-<connect gate="G$1" pin="D/C" pad="DC"/>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="LED" pad="LED"/>
-<connect gate="G$1" pin="MISO" pad="SDO&lt;MISO&gt;"/>
-<connect gate="G$1" pin="MOSI" pad="SDI&lt;MOSI&gt;"/>
-<connect gate="G$1" pin="RESET" pad="RESET"/>
-<connect gate="G$1" pin="SCK" pad="SCK"/>
-<connect gate="G$1" pin="SD-CS" pad="SD_CS"/>
-<connect gate="G$1" pin="SD-MISO" pad="SD_MISO"/>
-<connect gate="G$1" pin="SD-SCK" pad="SD-SCK"/>
-<connect gate="G$1" pin="SDI&lt;MOSI&gt;" pad="SD_MOSI"/>
-<connect gate="G$1" pin="T-CLK" pad="T_CLK"/>
-<connect gate="G$1" pin="T-CS" pad="T_CS"/>
-<connect gate="G$1" pin="T-DIN" pad="T_DIN"/>
-<connect gate="G$1" pin="T-DO" pad="T_DO"/>
-<connect gate="G$1" pin="T-IRO" pad="T_IRQ"/>
-<connect gate="G$1" pin="VCC" pad="UCC"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="MLX90640ESF-BAB-000-TU" prefix="U">
 <description>SENSOR DGTL -40C-85C TO39</description>
 <gates>
@@ -564,6 +532,38 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <technologies>
 <technology name="3.3V"/>
 <technology name="5.0V"/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ILI9341">
+<gates>
+<gate name="G$1" symbol="NEWILI9341" x="22.86" y="-20.32"/>
+</gates>
+<devices>
+<device name="" package="SKR1">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="SDI&lt;MOSI&gt;" pad="SDI&lt;MOSI&gt;"/>
+<connect gate="G$1" pin="SDO&lt;MISO&gt;" pad="SDO&lt;MISO&gt;"/>
+<connect gate="G$1" pin="SD_CS" pad="SD_CS"/>
+<connect gate="G$1" pin="SD_MISO" pad="SD_MISO"/>
+<connect gate="G$1" pin="SD_MOSI" pad="SD_MOSI"/>
+<connect gate="G$1" pin="SD_SCK" pad="SD-SCK"/>
+<connect gate="G$1" pin="TFT_CS" pad="CS"/>
+<connect gate="G$1" pin="TFT_DC" pad="DC"/>
+<connect gate="G$1" pin="TFT_LED" pad="LED"/>
+<connect gate="G$1" pin="TFT_RESET" pad="RESET"/>
+<connect gate="G$1" pin="TFT_SCK" pad="SCK"/>
+<connect gate="G$1" pin="T_CKL" pad="T_CLK"/>
+<connect gate="G$1" pin="T_CS" pad="T_CS"/>
+<connect gate="G$1" pin="T_DIN" pad="T_DIN"/>
+<connect gate="G$1" pin="T_DO" pad="T_DO"/>
+<connect gate="G$1" pin="T_IRQ" pad="T_IRQ"/>
+<connect gate="G$1" pin="VCC" pad="UCC"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
