@@ -38,7 +38,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
@@ -69,10 +69,11 @@
 <wire x1="0" y1="0" x2="86.36" y2="0" width="0.1524" layer="20"/>
 <wire x1="86.36" y1="0" x2="86.36" y2="52.07" width="0.1524" layer="20"/>
 <wire x1="86.36" y1="52.07" x2="0" y2="52.07" width="0.1524" layer="20"/>
-<circle x="2.54" y="2.27" radius="1.6" width="0.1524" layer="20"/>
-<circle x="84.54" y="2.27" radius="1.6" width="0.1524" layer="20"/>
-<circle x="84.54" y="50.27" radius="1.6" width="0.1524" layer="20"/>
-<circle x="2.54" y="50.27" radius="1.6" width="0.1524" layer="20"/>
+<text x="35" y="46" size="1.778" layer="25">DYInyk</text>
+<hole x="2" y="50" drill="1.6"/>
+<hole x="2" y="2" drill="1.6"/>
+<hole x="84" y="2" drill="1.6"/>
+<hole x="84" y="50" drill="1.6"/>
 </plain>
 <libraries>
 <library name="capacitor-wima" urn="urn:adsk.eagle:library:116">
