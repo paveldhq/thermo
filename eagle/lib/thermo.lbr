@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.1">
+<eagle version="9.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.019531" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -77,38 +77,41 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 &lt;a href="http://diymodules.org/eagle"&gt;&lt;img src="http://www.diymodules.org/img/diymodules-lbr-image.php?v=1.8.0" alt="DIYmodules.org"&gt;&lt;/a&gt;
 &lt;/center&gt;</description>
 <packages>
-<package name="ILI9341">
-<pad name="UCC" x="-33.02" y="0" drill="1" diameter="1.9304"/>
+<package name="ILI9341_DISPLAY_SD_MODULE">
+<pad name="VCC" x="-33.02" y="0" drill="1" diameter="1.9304"/>
 <pad name="GND" x="-30.48" y="0" drill="1" diameter="1.9304"/>
-<pad name="CS" x="-27.94" y="0" drill="1" diameter="1.9304"/>
-<pad name="RESET" x="-25.4" y="0" drill="1" diameter="1.9304"/>
-<pad name="DC" x="-22.86" y="0" drill="1" diameter="1.9304"/>
-<pad name="SDI&lt;MOSI&gt;" x="-20.32" y="0" drill="1" diameter="1.9304"/>
-<pad name="SCK" x="-17.78" y="0" drill="1" diameter="1.9304"/>
-<pad name="LED" x="-15.24" y="0" drill="1" diameter="1.9304"/>
-<pad name="SDO&lt;MISO&gt;" x="-12.7" y="0" drill="1" diameter="1.9304"/>
-<pad name="T_CLK" x="-10.16" y="0" drill="1" diameter="1.9304"/>
-<pad name="T_CS" x="-7.62" y="0" drill="1" diameter="1.9304"/>
-<pad name="T_DIN" x="-5.08" y="0" drill="1" diameter="1.9304"/>
-<pad name="T_DO" x="-2.54" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_CS" x="-27.94" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_RESET" x="-25.4" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_DC" x="-22.86" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SDI(MOSI)" x="-20.32" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SCK" x="-17.78" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_LED" x="-15.24" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SDO(MISO)" x="-12.7" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_CLK(SCK)" x="-10.16" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_CS" x="-7.62" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_DIN" x="-5.08" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_DO" x="-2.54" y="0" drill="1" diameter="1.9304"/>
 <wire x1="-38.8" y1="87.76" x2="4.85" y2="87.76" width="0.1524" layer="21"/>
 <wire x1="4.85" y1="87.76" x2="4.85" y2="-1.2954" width="0.1524" layer="21"/>
-<pad name="T_IRQ" x="0" y="0" drill="1" diameter="1.9304" shape="square"/>
-<pad name="SD-SCK" x="-12.7" y="76.2" drill="1" diameter="1.9304"/>
-<pad name="SD_MISO" x="-15.24" y="76.2" drill="1" diameter="1.9304"/>
-<pad name="SD_CS" x="-20.32" y="76.2" drill="1" diameter="1.9304"/>
-<pad name="SD_MOSI" x="-17.78" y="76.2" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_IRQ" x="0" y="0" drill="1" diameter="1.9304" shape="square"/>
+<pad name="SD_SCK_24" x="-12.7" y="76.2" drill="1" diameter="1.9304"/>
+<pad name="SD_MISO_24" x="-15.24" y="76.2" drill="1" diameter="1.9304"/>
+<pad name="SD_CS_24" x="-20.32" y="76.2" drill="1" diameter="1.9304"/>
+<pad name="SD_MOSI_24" x="-17.78" y="76.2" drill="1" diameter="1.9304"/>
 <wire x1="-38.8" y1="87.76" x2="-38.8" y2="-1.27" width="0.1524" layer="21"/>
 <wire x1="-38.8" y1="-1.27" x2="4.8768" y2="-1.27" width="0.1524" layer="21"/>
 <hole x="-36.5252" y="75.5396" drill="3.2"/>
 <hole x="2.5654" y="75.5396" drill="3.2"/>
 <hole x="2.76" y="6.44" drill="3.2"/>
 <hole x="-36.8" y="6.44" drill="3.2"/>
-<text x="-14.78" y="35.89" size="1.778" layer="25" rot="R90">ili9341</text>
-<pad name="SD-SCK2" x="-12.7" y="83.82" drill="1" diameter="1.9304"/>
-<pad name="SD_MISO1" x="-15.24" y="83.82" drill="1" diameter="1.9304"/>
-<pad name="SD_MOSI1" x="-17.78" y="83.82" drill="1" diameter="1.9304"/>
-<pad name="SD_CS1" x="-20.32" y="83.82" drill="1" diameter="1.9304"/>
+<text x="-10.97" y="23.19" size="1.778" layer="25" rot="R90">Supports common 2.4" and 3.2"
+ili9341 display modules with:
+ - Resistive touch
+ - SD card slot</text>
+<pad name="SD_SCK_32" x="-12.7" y="85.09" drill="1" diameter="1.9304"/>
+<pad name="SD_MISO_32" x="-15.24" y="85.09" drill="1" diameter="1.9304"/>
+<pad name="SD_MOSI_32" x="-17.78" y="85.09" drill="1" diameter="1.9304"/>
+<pad name="SD_CS_32" x="-20.32" y="85.09" drill="1" diameter="1.9304"/>
 </package>
 <package name="MLX90640ESF-BAB-000-TU">
 <wire x1="-2.554" y1="5.1201" x2="-2.1714" y2="4.1964" width="0.127" layer="51"/>
@@ -2422,33 +2425,33 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <text x="-26.67" y="5.08" size="1.27" layer="95" rot="R90">&gt;NAME</text>
 <text x="27.94" y="-12.7" size="1.27" layer="96" rot="R90">ESP32-DEVKITC</text>
 </symbol>
-<symbol name="ILI9341">
-<pin name="T_IRQ" x="0" y="0" length="middle" rot="R90"/>
-<pin name="T_DO" x="2.54" y="0" length="middle" rot="R90"/>
-<pin name="T_DIN" x="5.08" y="0" length="middle" rot="R90"/>
-<pin name="T_CS" x="7.62" y="0" length="middle" rot="R90"/>
-<pin name="T_CKL" x="10.16" y="0" length="middle" rot="R90"/>
-<pin name="SDO&lt;MISO&gt;" x="12.7" y="0" length="middle" rot="R90"/>
-<pin name="TFT_LED" x="15.24" y="0" length="middle" rot="R90"/>
-<pin name="TFT_SCK" x="17.78" y="0" length="middle" rot="R90"/>
-<pin name="SDI&lt;MOSI&gt;" x="20.32" y="0" length="middle" rot="R90"/>
-<pin name="TFT_DC" x="22.86" y="0" length="middle" rot="R90"/>
-<pin name="TFT_RESET" x="25.4" y="0" length="middle" rot="R90"/>
-<pin name="TFT_CS" x="27.94" y="0" length="middle" rot="R90"/>
-<pin name="GND" x="30.48" y="0" length="middle" rot="R90"/>
-<pin name="VCC" x="33.02" y="0" length="middle" rot="R90"/>
-<pin name="SD_SCK" x="10.16" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MISO" x="12.7" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MOSI" x="15.24" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_CS" x="17.78" y="38.1" length="middle" rot="R270"/>
-<wire x1="0" y1="5.08" x2="33.02" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="33.02" y1="5.08" x2="33.02" y2="33.02" width="0.1524" layer="94"/>
-<wire x1="33.02" y1="33.02" x2="0" y2="33.02" width="0.1524" layer="94"/>
-<wire x1="0" y1="33.02" x2="0" y2="5.08" width="0.1524" layer="94"/>
-<pin name="SD_SCK_3" x="22.86" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_CS_3" x="30.48" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MOSI_3" x="27.94" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MISO_3" x="25.4" y="38.1" length="middle" rot="R270"/>
+<symbol name="ILI9341_DISPLAY_SD_MODULE">
+<pin name="TOUCH_IRQ" x="0" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_SDO(MISO)" x="5.08" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_SDI(MOSI)" x="7.62" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_CS" x="10.16" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_CKL(SCK)" x="12.7" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SDO(MISO)" x="20.32" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_LED" x="35.56" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SCK" x="22.86" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SDI(MOSI)" x="25.4" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_DC" x="27.94" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_RESET" x="30.48" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_CS" x="33.02" y="-20.32" length="middle" rot="R90"/>
+<pin name="GND" x="45.72" y="7.62" length="middle" rot="R180"/>
+<pin name="VCC" x="45.72" y="12.7" length="middle" rot="R180"/>
+<pin name="SD_SCK_24" x="2.54" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO_24" x="5.08" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI_24" x="7.62" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS_24" x="10.16" y="38.1" length="middle" rot="R270"/>
+<wire x1="-5.08" y1="-15.24" x2="40.64" y2="-15.24" width="0.1524" layer="94"/>
+<wire x1="40.64" y1="-15.24" x2="40.64" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="40.64" y1="33.02" x2="-5.08" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="33.02" x2="-5.08" y2="-15.24" width="0.1524" layer="94"/>
+<pin name="SD_SCK_32" x="25.4" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS_32" x="33.02" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI_32" x="30.48" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO_32" x="27.94" y="38.1" length="middle" rot="R270"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2530,35 +2533,35 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </device>
 </devices>
 </deviceset>
-<deviceset name="ILI9341">
+<deviceset name="ILI9341_DISPLAY_SD_MODULE">
 <gates>
-<gate name="G$1" symbol="ILI9341" x="22.86" y="-20.32"/>
+<gate name="G$1" symbol="ILI9341_DISPLAY_SD_MODULE" x="22.86" y="-20.32"/>
 </gates>
 <devices>
-<device name="" package="ILI9341">
+<device name="" package="ILI9341_DISPLAY_SD_MODULE">
 <connects>
 <connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="SDI&lt;MOSI&gt;" pad="SDI&lt;MOSI&gt;"/>
-<connect gate="G$1" pin="SDO&lt;MISO&gt;" pad="SDO&lt;MISO&gt;"/>
-<connect gate="G$1" pin="SD_CS" pad="SD_CS"/>
-<connect gate="G$1" pin="SD_CS_3" pad="SD_CS1"/>
-<connect gate="G$1" pin="SD_MISO" pad="SD_MISO"/>
-<connect gate="G$1" pin="SD_MISO_3" pad="SD_MISO1"/>
-<connect gate="G$1" pin="SD_MOSI" pad="SD_MOSI"/>
-<connect gate="G$1" pin="SD_MOSI_3" pad="SD_MOSI1"/>
-<connect gate="G$1" pin="SD_SCK" pad="SD-SCK"/>
-<connect gate="G$1" pin="SD_SCK_3" pad="SD-SCK2"/>
-<connect gate="G$1" pin="TFT_CS" pad="CS"/>
-<connect gate="G$1" pin="TFT_DC" pad="DC"/>
-<connect gate="G$1" pin="TFT_LED" pad="LED"/>
-<connect gate="G$1" pin="TFT_RESET" pad="RESET"/>
-<connect gate="G$1" pin="TFT_SCK" pad="SCK"/>
-<connect gate="G$1" pin="T_CKL" pad="T_CLK"/>
-<connect gate="G$1" pin="T_CS" pad="T_CS"/>
-<connect gate="G$1" pin="T_DIN" pad="T_DIN"/>
-<connect gate="G$1" pin="T_DO" pad="T_DO"/>
-<connect gate="G$1" pin="T_IRQ" pad="T_IRQ"/>
-<connect gate="G$1" pin="VCC" pad="UCC"/>
+<connect gate="G$1" pin="SD_CS_24" pad="SD_CS_24"/>
+<connect gate="G$1" pin="SD_CS_32" pad="SD_CS_32"/>
+<connect gate="G$1" pin="SD_MISO_24" pad="SD_MISO_24"/>
+<connect gate="G$1" pin="SD_MISO_32" pad="SD_MISO_32"/>
+<connect gate="G$1" pin="SD_MOSI_24" pad="SD_MOSI_24"/>
+<connect gate="G$1" pin="SD_MOSI_32" pad="SD_MOSI_32"/>
+<connect gate="G$1" pin="SD_SCK_24" pad="SD_SCK_24"/>
+<connect gate="G$1" pin="SD_SCK_32" pad="SD_SCK_32"/>
+<connect gate="G$1" pin="TFT_CS" pad="TFT_CS"/>
+<connect gate="G$1" pin="TFT_DC" pad="TFT_DC"/>
+<connect gate="G$1" pin="TFT_LED" pad="TFT_LED"/>
+<connect gate="G$1" pin="TFT_RESET" pad="TFT_RESET"/>
+<connect gate="G$1" pin="TFT_SCK" pad="TFT_SCK"/>
+<connect gate="G$1" pin="TFT_SDI(MOSI)" pad="TFT_SDI(MOSI)"/>
+<connect gate="G$1" pin="TFT_SDO(MISO)" pad="TFT_SDO(MISO)"/>
+<connect gate="G$1" pin="TOUCH_CKL(SCK)" pad="TOUCH_CLK(SCK)"/>
+<connect gate="G$1" pin="TOUCH_CS" pad="TOUCH_CS"/>
+<connect gate="G$1" pin="TOUCH_IRQ" pad="TOUCH_IRQ"/>
+<connect gate="G$1" pin="TOUCH_SDI(MOSI)" pad="TOUCH_DIN"/>
+<connect gate="G$1" pin="TOUCH_SDO(MISO)" pad="TOUCH_DO"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -2569,4 +2572,10 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </devicesets>
 </library>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
