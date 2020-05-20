@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.0">
+<eagle version="9.6.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -5029,6 +5029,168 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="thermo">
+<description>&lt;b&gt;DIY Modules for Arduino, Raspberry Pi, CubieBoard etc.&lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The library contains a list of symbols and footprints for popular, cheap and easy-to-use electronic modules.&lt;br&gt;
+The modules are intend to work with microprocessor-based platforms such as &lt;a href="http://arduino.cc"&gt;Arduino&lt;/a&gt;, &lt;a href="http://raspberrypi.org/"&gt;Raspberry Pi&lt;/a&gt;, &lt;a href="http://cubieboard.org/"&gt;CubieBoard&lt;/a&gt;, &lt;a href="http://beagleboard.org/"&gt;BeagleBone&lt;/a&gt; and many others. There are many manufacturers of the modules in the world. Almost all of them can be bought on &lt;a href="ebay.com"&gt;ebay.com&lt;/a&gt;.&lt;br&gt;
+&lt;br&gt;
+By using this library, you can design a PCB for devices created with usage of modules. Even if you do not need to create PCB design, you can also use the library to quickly document your work by drawing schematics of devices built by you.&lt;br&gt;
+&lt;br&gt;
+The latest version, examples, photos and much more can be found at: &lt;b&gt;&lt;a href="http://diymodules.org/eagle"&gt;diymodules.org/eagle&lt;/a&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailto:eagle@diymodules.org"&gt;eagle@diymodules.org&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+&lt;i&gt;Version: 1.8.0 (2017-Jul-02)&lt;/i&gt;&lt;br&gt;
+&lt;i&gt;Created by: Miroslaw Brudnowski&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+&lt;i&gt;Released under the Creative Commons Attribution 4.0 International License: &lt;a href="http://creativecommons.org/licenses/by/4.0"&gt;http://creativecommons.org/licenses/by/4.0&lt;/a&gt;&lt;/i&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+&lt;a href="http://diymodules.org/eagle"&gt;&lt;img src="http://www.diymodules.org/img/diymodules-lbr-image.php?v=1.8.0" alt="DIYmodules.org"&gt;&lt;/a&gt;
+&lt;/center&gt;</description>
+<packages>
+<package name="ILI9341_DISPLAY_SD_MODULE">
+<pad name="TOUCH_IRQ" x="-0.02" y="0" drill="1" diameter="1.9304"/>
+<pad name="GND" x="-30.48" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_CS" x="-27.94" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_RESET" x="-25.4" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_DC" x="-22.86" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SDI(MOSI)" x="-20.32" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SCK" x="-17.78" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_LED" x="-15.24" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SDO(MISO)" x="-12.7" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_CLK(SCK)" x="-10.16" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_CS" x="-7.62" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_DIN" x="-5.08" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_DO" x="-2.54" y="0" drill="1" diameter="1.9304"/>
+<wire x1="-43.8" y1="87.76" x2="10.85" y2="87.76" width="0.1524" layer="21"/>
+<wire x1="10.85" y1="87.76" x2="10.85" y2="-1.2954" width="0.1524" layer="21"/>
+<pad name="VCC!" x="-33" y="0" drill="1" diameter="1.9304" shape="square"/>
+<wire x1="-43.8" y1="87.76" x2="-43.8" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-43.8" y1="-1.27" x2="10.8768" y2="-1.27" width="0.1524" layer="21"/>
+<text x="-10.97" y="23.19" size="1.778" layer="25" rot="R90">Supports common 2.4"; 2.8" and 3.2"
+ili9341 display modules with:
+ - Resistive touch
+ - SD card slot</text>
+<text x="-19.812" y="66.77" size="1.016" layer="21" rot="R90">SD_CS</text>
+<text x="-17.272" y="66.246" size="1.016" layer="21" rot="R90">SD_MOSI</text>
+<text x="-14.732" y="66.246" size="1.016" layer="21" rot="R90">SD_MISO</text>
+<text x="-12.192" y="66.754" size="1.016" layer="21" rot="R90">SD_SCK</text>
+<text x="0.508" y="2.54" size="1.016" layer="21" rot="R90">T_IRQ</text>
+<text x="-2.032" y="2.54" size="1.016" layer="21" rot="R90">T_MISO</text>
+<text x="-4.826" y="2.54" size="1.016" layer="21" rot="R90">SD_MOSI</text>
+<text x="-9.652" y="2.54" size="1.016" layer="21" rot="R90">T_CLK</text>
+<text x="-12.192" y="2.54" size="1.016" layer="21" rot="R90">SDO&lt;MISO&gt;</text>
+<text x="-14.732" y="2.54" size="1.016" layer="21" rot="R90">LED</text>
+<text x="-17.272" y="2.54" size="1.016" layer="21" rot="R90">SCK</text>
+<text x="-19.812" y="2.54" size="1.016" layer="21" rot="R90">SDI&lt;MOSI&gt;</text>
+<text x="-22.352" y="2.54" size="1.016" layer="21" rot="R90">TFT_DC</text>
+<text x="-24.892" y="2.54" size="1.016" layer="21" rot="R90">RESET</text>
+<text x="-27.432" y="2.54" size="1.016" layer="21" rot="R90">TFT_CS</text>
+<text x="-29.972" y="2.54" size="1.016" layer="21" rot="R90">GND</text>
+<text x="-32.512" y="2.54" size="1.016" layer="21" rot="R90">VCC</text>
+<text x="-7.112" y="2.54" size="1.016" layer="21" rot="R90">T_CS</text>
+<pad name="SD_SCK_32" x="-12.72" y="84.8" drill="1" diameter="1.9304"/>
+<pad name="SD_MISO_32" x="-15.26" y="84.8" drill="1" diameter="1.9304"/>
+<pad name="SD_MOSI_32" x="-17.8" y="84.8" drill="1" diameter="1.9304"/>
+<pad name="SD_CS_32" x="-20.34" y="84.8" drill="1" diameter="1.9304" shape="square"/>
+<pad name="SD_SCK_28" x="-12.72" y="81.5" drill="1" diameter="1.9304"/>
+<pad name="SD_MISO_28" x="-15.26" y="81.5" drill="1" diameter="1.9304"/>
+<pad name="SD_MOSI_28" x="-17.8" y="81.5" drill="1" diameter="1.9304"/>
+<pad name="SD_CS_28" x="-20.34" y="81.5" drill="1" diameter="1.9304" shape="square"/>
+<pad name="SD_SCK_24" x="-12.72" y="74.18" drill="1" diameter="1.9304"/>
+<pad name="SD_MISO_24" x="-15.26" y="74.18" drill="1" diameter="1.9304"/>
+<pad name="SD_MOSI_24" x="-17.8" y="74.18" drill="1" diameter="1.9304"/>
+<pad name="SD_CS_24" x="-20.34" y="74.18" drill="1" diameter="1.9304" shape="square"/>
+<hole x="8.01" y="1.5" drill="3.2"/>
+<hole x="-40.99" y="1.5" drill="3.2"/>
+<hole x="-40.99" y="85" drill="3.2"/>
+<hole x="7.51" y="85" drill="3.2"/>
+<hole x="4.99" y="81.5" drill="3.2"/>
+<hole x="-38.35" y="81.5" drill="3.2"/>
+<hole x="-38.5" y="5.5" drill="3.2"/>
+<hole x="5.5" y="5.5" drill="3.2"/>
+<hole x="-35" y="6" drill="3.2"/>
+<hole x="2" y="6" drill="3.2"/>
+<hole x="-35" y="73" drill="3.2"/>
+<hole x="2" y="73" drill="3.2"/>
+</package>
+</packages>
+<symbols>
+<symbol name="ILI9341_DISPLAY_SD_MODULE">
+<pin name="TOUCH_IRQ" x="0" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_SDO(MISO)" x="5.08" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_SDI(MOSI)" x="7.62" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_CS" x="10.16" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_CKL(SCK)" x="12.7" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SDO(MISO)" x="20.32" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_LED" x="35.56" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SCK" x="22.86" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SDI(MOSI)" x="25.4" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_DC" x="27.94" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_RESET" x="30.48" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_CS" x="33.02" y="-20.32" length="middle" rot="R90"/>
+<pin name="GND" x="45.72" y="7.62" length="middle" rot="R180"/>
+<pin name="VCC" x="45.72" y="12.7" length="middle" rot="R180"/>
+<pin name="SD_SCK_24" x="0" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO_24" x="2.54" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI_24" x="5.08" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS_24" x="7.62" y="38.1" length="middle" rot="R270"/>
+<wire x1="-5.08" y1="-15.24" x2="40.64" y2="-15.24" width="0.1524" layer="94"/>
+<wire x1="40.64" y1="-15.24" x2="40.64" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="40.64" y1="33.02" x2="-5.08" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="33.02" x2="-5.08" y2="-15.24" width="0.1524" layer="94"/>
+<pin name="SD_SCK_32" x="27.94" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS_32" x="35.56" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI_32" x="33.02" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO_32" x="30.48" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_SCK_28" x="12.7" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO_28" x="15.24" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI_28" x="17.78" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS_28" x="20.32" y="38.1" length="middle" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ILI9341_DISPLAY_SD_MODULE">
+<gates>
+<gate name="G$1" symbol="ILI9341_DISPLAY_SD_MODULE" x="22.86" y="-20.32"/>
+</gates>
+<devices>
+<device name="" package="ILI9341_DISPLAY_SD_MODULE">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="SD_CS_24" pad="SD_CS_24"/>
+<connect gate="G$1" pin="SD_CS_28" pad="SD_CS_28"/>
+<connect gate="G$1" pin="SD_CS_32" pad="SD_CS_32"/>
+<connect gate="G$1" pin="SD_MISO_24" pad="SD_MISO_24"/>
+<connect gate="G$1" pin="SD_MISO_28" pad="SD_MISO_28"/>
+<connect gate="G$1" pin="SD_MISO_32" pad="SD_MISO_32"/>
+<connect gate="G$1" pin="SD_MOSI_24" pad="SD_MOSI_24"/>
+<connect gate="G$1" pin="SD_MOSI_28" pad="SD_MOSI_28"/>
+<connect gate="G$1" pin="SD_MOSI_32" pad="SD_MOSI_32"/>
+<connect gate="G$1" pin="SD_SCK_24" pad="SD_SCK_24"/>
+<connect gate="G$1" pin="SD_SCK_28" pad="SD_SCK_28"/>
+<connect gate="G$1" pin="SD_SCK_32" pad="SD_SCK_32"/>
+<connect gate="G$1" pin="TFT_CS" pad="TFT_CS"/>
+<connect gate="G$1" pin="TFT_DC" pad="TFT_DC"/>
+<connect gate="G$1" pin="TFT_LED" pad="TFT_LED"/>
+<connect gate="G$1" pin="TFT_RESET" pad="TFT_RESET"/>
+<connect gate="G$1" pin="TFT_SCK" pad="TFT_SCK"/>
+<connect gate="G$1" pin="TFT_SDI(MOSI)" pad="TFT_SDI(MOSI)"/>
+<connect gate="G$1" pin="TFT_SDO(MISO)" pad="TFT_SDO(MISO)"/>
+<connect gate="G$1" pin="TOUCH_CKL(SCK)" pad="TOUCH_CLK(SCK)"/>
+<connect gate="G$1" pin="TOUCH_CS" pad="TOUCH_CS"/>
+<connect gate="G$1" pin="TOUCH_IRQ" pad="VCC!"/>
+<connect gate="G$1" pin="TOUCH_SDI(MOSI)" pad="TOUCH_DIN"/>
+<connect gate="G$1" pin="TOUCH_SDO(MISO)" pad="TOUCH_DO"/>
+<connect gate="G$1" pin="VCC" pad="TOUCH_IRQ"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 <library name="capacitor-wima" urn="urn:adsk.eagle:library:116">
 <description>&lt;b&gt;WIMA Capacitors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -6628,137 +6790,13 @@ naming: grid - package width</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="thermo">
-<description>&lt;b&gt;DIY Modules for Arduino, Raspberry Pi, CubieBoard etc.&lt;/b&gt;
-&lt;br&gt;&lt;br&gt;
-The library contains a list of symbols and footprints for popular, cheap and easy-to-use electronic modules.&lt;br&gt;
-The modules are intend to work with microprocessor-based platforms such as &lt;a href="http://arduino.cc"&gt;Arduino&lt;/a&gt;, &lt;a href="http://raspberrypi.org/"&gt;Raspberry Pi&lt;/a&gt;, &lt;a href="http://cubieboard.org/"&gt;CubieBoard&lt;/a&gt;, &lt;a href="http://beagleboard.org/"&gt;BeagleBone&lt;/a&gt; and many others. There are many manufacturers of the modules in the world. Almost all of them can be bought on &lt;a href="ebay.com"&gt;ebay.com&lt;/a&gt;.&lt;br&gt;
-&lt;br&gt;
-By using this library, you can design a PCB for devices created with usage of modules. Even if you do not need to create PCB design, you can also use the library to quickly document your work by drawing schematics of devices built by you.&lt;br&gt;
-&lt;br&gt;
-The latest version, examples, photos and much more can be found at: &lt;b&gt;&lt;a href="http://diymodules.org/eagle"&gt;diymodules.org/eagle&lt;/a&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailto:eagle@diymodules.org"&gt;eagle@diymodules.org&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;
-&lt;i&gt;Version: 1.8.0 (2017-Jul-02)&lt;/i&gt;&lt;br&gt;
-&lt;i&gt;Created by: Miroslaw Brudnowski&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-&lt;i&gt;Released under the Creative Commons Attribution 4.0 International License: &lt;a href="http://creativecommons.org/licenses/by/4.0"&gt;http://creativecommons.org/licenses/by/4.0&lt;/a&gt;&lt;/i&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;a href="http://diymodules.org/eagle"&gt;&lt;img src="http://www.diymodules.org/img/diymodules-lbr-image.php?v=1.8.0" alt="DIYmodules.org"&gt;&lt;/a&gt;
-&lt;/center&gt;</description>
-<packages>
-<package name="ILI9341_DISPLAY_SD_MODULE">
-<pad name="VCC" x="-33.02" y="0" drill="1" diameter="1.9304"/>
-<pad name="GND" x="-30.48" y="0" drill="1" diameter="1.9304"/>
-<pad name="TFT_CS" x="-27.94" y="0" drill="1" diameter="1.9304"/>
-<pad name="TFT_RESET" x="-25.4" y="0" drill="1" diameter="1.9304"/>
-<pad name="TFT_DC" x="-22.86" y="0" drill="1" diameter="1.9304"/>
-<pad name="TFT_SDI(MOSI)" x="-20.32" y="0" drill="1" diameter="1.9304"/>
-<pad name="TFT_SCK" x="-17.78" y="0" drill="1" diameter="1.9304"/>
-<pad name="TFT_LED" x="-15.24" y="0" drill="1" diameter="1.9304"/>
-<pad name="TFT_SDO(MISO)" x="-12.7" y="0" drill="1" diameter="1.9304"/>
-<pad name="TOUCH_CLK(SCK)" x="-10.16" y="0" drill="1" diameter="1.9304"/>
-<pad name="TOUCH_CS" x="-7.62" y="0" drill="1" diameter="1.9304"/>
-<pad name="TOUCH_DIN" x="-5.08" y="0" drill="1" diameter="1.9304"/>
-<pad name="TOUCH_DO" x="-2.54" y="0" drill="1" diameter="1.9304"/>
-<wire x1="-38.8" y1="87.76" x2="4.85" y2="87.76" width="0.1524" layer="21"/>
-<wire x1="4.85" y1="87.76" x2="4.85" y2="-1.2954" width="0.1524" layer="21"/>
-<pad name="TOUCH_IRQ" x="0" y="0" drill="1" diameter="1.9304" shape="square"/>
-<pad name="SD_SCK_24" x="-12.7" y="76.2" drill="1" diameter="1.9304"/>
-<pad name="SD_MISO_24" x="-15.24" y="76.2" drill="1" diameter="1.9304"/>
-<pad name="SD_CS_24" x="-20.32" y="76.2" drill="1" diameter="1.9304"/>
-<pad name="SD_MOSI_24" x="-17.78" y="76.2" drill="1" diameter="1.9304"/>
-<wire x1="-38.8" y1="87.76" x2="-38.8" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-38.8" y1="-1.27" x2="4.8768" y2="-1.27" width="0.1524" layer="21"/>
-<hole x="-36.5252" y="75.5396" drill="3.2"/>
-<hole x="2.5654" y="75.5396" drill="3.2"/>
-<hole x="2.76" y="6.44" drill="3.2"/>
-<hole x="-36.8" y="6.44" drill="3.2"/>
-<text x="-10.97" y="23.19" size="1.778" layer="25" rot="R90">Supports common 2.4" and 3.2"
-ili9341 display modules with:
- - Resistive touch
- - SD card slot</text>
-<pad name="SD_SCK_32" x="-12.7" y="85.09" drill="1" diameter="1.9304"/>
-<pad name="SD_MISO_32" x="-15.24" y="85.09" drill="1" diameter="1.9304"/>
-<pad name="SD_MOSI_32" x="-17.78" y="85.09" drill="1" diameter="1.9304"/>
-<pad name="SD_CS_32" x="-20.32" y="85.09" drill="1" diameter="1.9304"/>
-</package>
-</packages>
-<symbols>
-<symbol name="ILI9341_DISPLAY_SD_MODULE">
-<pin name="TOUCH_IRQ" x="0" y="-20.32" length="middle" rot="R90"/>
-<pin name="TOUCH_SDO(MISO)" x="5.08" y="-20.32" length="middle" rot="R90"/>
-<pin name="TOUCH_SDI(MOSI)" x="7.62" y="-20.32" length="middle" rot="R90"/>
-<pin name="TOUCH_CS" x="10.16" y="-20.32" length="middle" rot="R90"/>
-<pin name="TOUCH_CKL(SCK)" x="12.7" y="-20.32" length="middle" rot="R90"/>
-<pin name="TFT_SDO(MISO)" x="20.32" y="-20.32" length="middle" rot="R90"/>
-<pin name="TFT_LED" x="35.56" y="-20.32" length="middle" rot="R90"/>
-<pin name="TFT_SCK" x="22.86" y="-20.32" length="middle" rot="R90"/>
-<pin name="TFT_SDI(MOSI)" x="25.4" y="-20.32" length="middle" rot="R90"/>
-<pin name="TFT_DC" x="27.94" y="-20.32" length="middle" rot="R90"/>
-<pin name="TFT_RESET" x="30.48" y="-20.32" length="middle" rot="R90"/>
-<pin name="TFT_CS" x="33.02" y="-20.32" length="middle" rot="R90"/>
-<pin name="GND" x="45.72" y="7.62" length="middle" rot="R180"/>
-<pin name="VCC" x="45.72" y="12.7" length="middle" rot="R180"/>
-<pin name="SD_SCK_24" x="2.54" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MISO_24" x="5.08" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MOSI_24" x="7.62" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_CS_24" x="10.16" y="38.1" length="middle" rot="R270"/>
-<wire x1="-5.08" y1="-15.24" x2="40.64" y2="-15.24" width="0.1524" layer="94"/>
-<wire x1="40.64" y1="-15.24" x2="40.64" y2="33.02" width="0.1524" layer="94"/>
-<wire x1="40.64" y1="33.02" x2="-5.08" y2="33.02" width="0.1524" layer="94"/>
-<wire x1="-5.08" y1="33.02" x2="-5.08" y2="-15.24" width="0.1524" layer="94"/>
-<pin name="SD_SCK_32" x="25.4" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_CS_32" x="33.02" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MOSI_32" x="30.48" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MISO_32" x="27.94" y="38.1" length="middle" rot="R270"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="ILI9341_DISPLAY_SD_MODULE">
-<gates>
-<gate name="G$1" symbol="ILI9341_DISPLAY_SD_MODULE" x="22.86" y="-20.32"/>
-</gates>
-<devices>
-<device name="" package="ILI9341_DISPLAY_SD_MODULE">
-<connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="SD_CS_24" pad="SD_CS_24"/>
-<connect gate="G$1" pin="SD_CS_32" pad="SD_CS_32"/>
-<connect gate="G$1" pin="SD_MISO_24" pad="SD_MISO_24"/>
-<connect gate="G$1" pin="SD_MISO_32" pad="SD_MISO_32"/>
-<connect gate="G$1" pin="SD_MOSI_24" pad="SD_MOSI_24"/>
-<connect gate="G$1" pin="SD_MOSI_32" pad="SD_MOSI_32"/>
-<connect gate="G$1" pin="SD_SCK_24" pad="SD_SCK_24"/>
-<connect gate="G$1" pin="SD_SCK_32" pad="SD_SCK_32"/>
-<connect gate="G$1" pin="TFT_CS" pad="TFT_CS"/>
-<connect gate="G$1" pin="TFT_DC" pad="TFT_DC"/>
-<connect gate="G$1" pin="TFT_LED" pad="TFT_LED"/>
-<connect gate="G$1" pin="TFT_RESET" pad="TFT_RESET"/>
-<connect gate="G$1" pin="TFT_SCK" pad="TFT_SCK"/>
-<connect gate="G$1" pin="TFT_SDI(MOSI)" pad="TFT_SDI(MOSI)"/>
-<connect gate="G$1" pin="TFT_SDO(MISO)" pad="TFT_SDO(MISO)"/>
-<connect gate="G$1" pin="TOUCH_CKL(SCK)" pad="TOUCH_CLK(SCK)"/>
-<connect gate="G$1" pin="TOUCH_CS" pad="TOUCH_CS"/>
-<connect gate="G$1" pin="TOUCH_IRQ" pad="TOUCH_IRQ"/>
-<connect gate="G$1" pin="TOUCH_SDI(MOSI)" pad="TOUCH_DIN"/>
-<connect gate="G$1" pin="TOUCH_SDO(MISO)" pad="TOUCH_DO"/>
-<connect gate="G$1" pin="VCC" pad="VCC"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
+<class number="0" name="default" width="0.4064" drill="0">
 </class>
 <class number="1" name="supply" width="0.8128" drill="0">
 </class>
@@ -6766,30 +6804,55 @@ ili9341 display modules with:
 <groups>
 <schematic_group name="I2C_PULL_UP1"/>
 <schematic_group name="MLX1"/>
-<schematic_group name="MLX90640"/>
 <schematic_group name="POWER_SUPPLY"/>
 <schematic_group name="ESP32"/>
 <schematic_group name="TFT_VSPI_PULL_UP"/>
 <schematic_group name="SD_HSPI_PULL_UP"/>
-<schematic_group name="SCREEN_TOUCH_SD"/>
+<schematic_group name="I2C_PULL_UP2"/>
+<schematic_group name="MLX2"/>
+<schematic_group name="PULL_UP1"/>
+<schematic_group name="I2C_PULL_UP3"/>
+<schematic_group name="MLX3"/>
+<schematic_group name="PULL_UP2"/>
+<schematic_group name="I2C_PULL_UP4"/>
+<schematic_group name="MLX4"/>
+<schematic_group name="PULL_UP3"/>
+<schematic_group name="MLX5"/>
+<schematic_group name="ILI9341_24_28_1"/>
+<schematic_group name="I2C_PULL_UP5"/>
+<schematic_group name="MLX6"/>
+<schematic_group name="PULL_UP4"/>
+<schematic_group name="I2C_PULL_UP6"/>
+<schematic_group name="MLX7"/>
+<schematic_group name="PULL_UP5"/>
+<schematic_group name="MLX8"/>
+<schematic_group name="ILI9341_24_28_2"/>
+<schematic_group name="TFT_TOUCH_CS"/>
+<schematic_group name="I2C_PULL_UP7"/>
+<schematic_group name="MLX9"/>
+<schematic_group name="PULL_UP6"/>
+<schematic_group name="I2C_PULL_UP8"/>
+<schematic_group name="MLX10"/>
+<schematic_group name="PULL_UP7"/>
+<schematic_group name="MLX90640"/>
 </groups>
 <parts>
 <part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="5V"/>
 <part name="U$2" library="teploblinEkran" deviceset="ESP32DEVKITC" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C1" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="10U"/>
-<part name="C2" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="100n"/>
-<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="1K"/>
-<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="1K"/>
-<part name="U1" library="teploblinEkran" deviceset="MLX90640ESF-BAB-000-TU" device=""/>
-<part name="U$1" library="thermo" deviceset="ILI9341_DISPLAY_SD_MODULE" device=""/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
+<part name="U$1" library="thermo" deviceset="ILI9341_DISPLAY_SD_MODULE" device=""/>
+<part name="C3" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="10U"/>
+<part name="C4" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="100n"/>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="1K"/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="1K"/>
+<part name="U2" library="teploblinEkran" deviceset="MLX90640ESF-BAB-000-TU" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6809,27 +6872,6 @@ ili9341 display modules with:
 <instance part="GND1" gate="1" x="269.24" y="144.78" smashed="yes" grouprefs="POWER_SUPPLY">
 <attribute name="VALUE" x="261.62" y="142.24" size="1.778" layer="96"/>
 </instance>
-<instance part="C1" gate="G$1" x="193.2" y="44.42" smashed="yes" grouprefs="MLX90640">
-<attribute name="NAME" x="194.724" y="44.801" size="1.778" layer="95"/>
-<attribute name="VALUE" x="194.724" y="39.721" size="1.778" layer="96"/>
-</instance>
-<instance part="C2" gate="G$1" x="205.36" y="44.42" smashed="yes" grouprefs="MLX90640">
-<attribute name="NAME" x="206.884" y="44.801" size="1.778" layer="95"/>
-<attribute name="VALUE" x="206.884" y="39.721" size="1.778" layer="96"/>
-</instance>
-<instance part="R7" gate="G$1" x="171.45" y="72.29" smashed="yes" rot="R180" grouprefs="MLX90640">
-<attribute name="NAME" x="175.26" y="70.7914" size="1.27" layer="95" rot="R180"/>
-<attribute name="VALUE" x="175.26" y="75.592" size="1.27" layer="96" rot="R180"/>
-</instance>
-<instance part="R8" gate="G$1" x="171.45" y="82.45" smashed="yes" rot="R180" grouprefs="MLX90640">
-<attribute name="NAME" x="175.26" y="80.9514" size="1.27" layer="95" rot="R180"/>
-<attribute name="VALUE" x="175.26" y="85.752" size="1.27" layer="96" rot="R180"/>
-</instance>
-<instance part="U1" gate="G$1" x="173.99" y="46.99" smashed="yes" grouprefs="MLX90640">
-<attribute name="NAME" x="163.83" y="55.88" size="1.778" layer="95"/>
-<attribute name="VALUE" x="163.83" y="35.56" size="1.778" layer="96" align="top-left"/>
-</instance>
-<instance part="U$1" gate="G$1" x="73.66" y="104.14" smashed="yes" grouprefs="SCREEN_TOUCH_SD"/>
 <instance part="R1" gate="G$1" x="252.73" y="82.45" smashed="yes" rot="R180" grouprefs="TFT_VSPI_PULL_UP">
 <attribute name="NAME" x="256.54" y="80.9514" size="1.27" layer="95" rot="R180"/>
 <attribute name="VALUE" x="256.54" y="85.752" size="1.27" layer="96" rot="R180"/>
@@ -6854,11 +6896,32 @@ ili9341 display modules with:
 <attribute name="NAME" x="256.54" y="35.2314" size="1.27" layer="95" rot="R180"/>
 <attribute name="VALUE" x="256.54" y="40.032" size="1.27" layer="96" rot="R180"/>
 </instance>
+<instance part="U$1" gate="G$1" x="79.248" y="100.584" smashed="yes" grouprefs="TFT_TOUCH_CS"/>
+<instance part="C3" gate="G$1" x="209.71" y="53.056" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="211.234" y="53.437" size="1.778" layer="95"/>
+<attribute name="VALUE" x="211.234" y="48.357" size="1.778" layer="96"/>
+</instance>
+<instance part="C4" gate="G$1" x="216.87" y="53.056" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="218.394" y="53.437" size="1.778" layer="95"/>
+<attribute name="VALUE" x="218.394" y="48.357" size="1.778" layer="96"/>
+</instance>
+<instance part="R9" gate="G$1" x="189.96" y="70.926" smashed="yes" rot="R180" grouprefs="MLX90640">
+<attribute name="NAME" x="193.77" y="69.4274" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="193.77" y="74.228" size="1.27" layer="96" rot="R180"/>
+</instance>
+<instance part="R10" gate="G$1" x="189.96" y="81.086" smashed="yes" rot="R180" grouprefs="MLX90640">
+<attribute name="NAME" x="193.77" y="79.5874" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="193.77" y="84.388" size="1.27" layer="96" rot="R180"/>
+</instance>
+<instance part="U2" gate="G$1" x="190.5" y="55.626" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="180.34" y="64.516" size="1.778" layer="95"/>
+<attribute name="VALUE" x="180.34" y="44.196" size="1.778" layer="96" align="top-left"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="U$2" gate="G$1" pin="GND@38"/>
 <wire x1="172.72" y1="148.59" x2="172.72" y2="152.4" width="0.1524" layer="91" grouprefs="ESP32"/>
@@ -6875,22 +6938,22 @@ ili9341 display modules with:
 <label x="246.38" y="147.32" size="1.778" layer="95" grouprefs="POWER_SUPPLY"/>
 </segment>
 <segment>
-<pinref part="C1" gate="G$1" pin="2"/>
-<pinref part="U1" gate="G$1" pin="GND"/>
-<wire x1="193.2" y1="39.34" x2="189.26" y2="39.34" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="189.26" y1="39.34" x2="189.23" y2="39.37" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="193.2" y1="39.34" x2="205.36" y2="39.34" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<junction x="193.2" y="39.34" grouprefs="MLX90640"/>
-<wire x1="205.36" y1="39.34" x2="205.28" y2="39.26" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="205.28" y1="39.26" x2="205.28" y2="36.18" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<junction x="205.36" y="39.34" grouprefs="MLX90640"/>
-<label x="206.28" y="34.18" size="1.778" layer="95" grouprefs="MLX90640"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="124.968" y1="108.204" x2="135.128" y2="108.204" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="105.664" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
-<wire x1="119.38" y1="111.76" x2="129.54" y2="111.76" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="129.54" y="109.22" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="216.87" y1="47.976" x2="209.71" y2="47.976" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<pinref part="U2" gate="G$1" pin="GND"/>
+<wire x1="209.71" y1="47.976" x2="205.77" y2="47.976" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="205.77" y1="47.976" x2="205.74" y2="48.006" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<junction x="209.71" y="47.976" grouprefs="MLX90640"/>
+<wire x1="216.87" y1="47.976" x2="216.87" y2="46.696" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="216.87" y1="46.696" x2="218.61" y2="44.956" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<junction x="216.87" y="47.976" grouprefs="MLX90640"/>
+<label x="218.61" y="43.956" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -6901,16 +6964,16 @@ ili9341 display modules with:
 <label x="154.94" y="157.48" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="SCL"/>
-<wire x1="158.75" y1="46.99" x2="154.94" y2="46.99" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="154.94" y1="46.99" x2="154.94" y2="48.26" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="154.4" y="49.8" size="1.27" layer="95" grouprefs="MLX90640"/>
+<pinref part="U2" gate="G$1" pin="SCL"/>
+<wire x1="175.26" y1="55.626" x2="171.45" y2="55.626" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="171.45" y1="55.626" x2="171.45" y2="56.896" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="170.91" y="58.436" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 <segment>
-<pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="166.37" y1="72.29" x2="165.1" y2="72.29" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="165.1" y1="72.29" x2="165.1" y2="73.66" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="165.02" y="74.66" size="1.27" layer="95" grouprefs="MLX90640"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="184.88" y1="70.926" x2="183.61" y2="70.926" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="183.61" y1="70.926" x2="183.61" y2="72.296" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="183.53" y="73.296" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 </net>
 <net name="SD_MISO" class="0">
@@ -6921,20 +6984,25 @@ ili9341 display modules with:
 <label x="218.44" y="96.52" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="SD_MISO_32"/>
-<wire x1="101.6" y1="142.24" x2="101.6" y2="162.56" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="104.14" y="162.56" size="1.27" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_MISO_24"/>
-<wire x1="78.74" y1="142.24" x2="78.74" y2="157.48" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="68.58" y="157.48" size="1.27" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
 <wire x1="247.65" y1="36.73" x2="238.76" y2="36.73" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
 <wire x1="238.76" y1="36.73" x2="238.76" y2="38.1" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
 <label x="233.68" y="38.1" size="1.27" layer="95" grouprefs="SD_HSPI_PULL_UP"/>
 <pinref part="R6" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_MISO_32"/>
+<wire x1="109.728" y1="138.684" x2="109.728" y2="159.004" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="109.728" y="159.004" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_MISO_24"/>
+<wire x1="81.788" y1="138.684" x2="81.788" y2="153.924" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="74.168" y="153.924" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_MISO_28"/>
+<wire x1="94.488" y1="138.684" x2="94.488" y2="153.924" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="94.488" y="153.924" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
 </segment>
 </net>
 <net name="SD_MOSI" class="0">
@@ -6945,20 +7013,25 @@ ili9341 display modules with:
 <label x="218.44" y="104.14" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="SD_MOSI_32"/>
-<wire x1="104.14" y1="142.24" x2="104.14" y2="157.48" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="106.68" y="157.48" size="1.27" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_MOSI_24"/>
-<wire x1="81.28" y1="142.24" x2="81.28" y2="162.56" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="71.12" y="162.56" size="1.27" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
 <wire x1="247.65" y1="44.35" x2="238.76" y2="44.35" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
 <wire x1="238.76" y1="44.35" x2="238.76" y2="45.72" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
 <label x="233.68" y="45.72" size="1.27" layer="95" grouprefs="SD_HSPI_PULL_UP"/>
 <pinref part="R5" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_MOSI_32"/>
+<wire x1="112.268" y1="138.684" x2="112.268" y2="153.924" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="112.268" y="153.924" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_MOSI_24"/>
+<wire x1="84.328" y1="138.684" x2="84.328" y2="159.004" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="76.708" y="159.004" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_MOSI_28"/>
+<wire x1="97.028" y1="138.684" x2="97.028" y2="153.924" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="97.028" y="153.924" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -6969,16 +7042,16 @@ ili9341 display modules with:
 <label x="154.94" y="160.02" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="SDA"/>
-<wire x1="158.75" y1="44.45" x2="154.94" y2="44.45" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="154.94" y1="44.45" x2="154.94" y2="43.18" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="154.4" y="41.64" size="1.27" layer="95" grouprefs="MLX90640"/>
+<pinref part="U2" gate="G$1" pin="SDA"/>
+<wire x1="175.26" y1="53.086" x2="171.45" y2="53.086" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="171.45" y1="53.086" x2="171.45" y2="51.816" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="170.91" y="50.276" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 <segment>
-<pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="166.37" y1="82.45" x2="165.1" y2="82.45" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="165.1" y1="82.45" x2="165.1" y2="81.28" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="165.02" y="79.28" size="1.27" layer="95" grouprefs="MLX90640"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="184.88" y1="81.086" x2="183.61" y2="81.086" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="183.61" y1="81.086" x2="183.61" y2="79.916" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="183.53" y="77.916" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 </net>
 <net name="SD_CS" class="0">
@@ -6989,23 +7062,28 @@ ili9341 display modules with:
 <label x="218.44" y="154.94" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="SD_CS_32"/>
-<wire x1="106.68" y1="142.24" x2="106.68" y2="152.4" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="109.22" y="152.4" size="1.27" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_CS_24"/>
-<wire x1="83.82" y1="142.24" x2="83.82" y2="167.64" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="76.2" y="167.64" size="1.27" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
 <wire x1="247.65" y1="51.97" x2="238.76" y2="51.97" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
 <wire x1="238.76" y1="51.97" x2="238.76" y2="53.34" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
 <label x="233.68" y="53.34" size="1.27" layer="95" grouprefs="SD_HSPI_PULL_UP"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_CS_32"/>
+<wire x1="114.808" y1="138.684" x2="114.808" y2="151.384" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="114.808" y="148.844" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_CS_24"/>
+<wire x1="86.868" y1="138.684" x2="86.868" y2="164.084" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="81.788" y="164.084" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_CS_28"/>
+<wire x1="99.568" y1="138.684" x2="99.568" y2="151.384" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="99.568" y="151.384" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
-<net name="+5V" class="0">
+<net name="+5V" class="1">
 <segment>
 <pinref part="P+1" gate="1" pin="+5V"/>
 <wire x1="269.24" y1="160.02" x2="269.24" y2="154.94" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
@@ -7024,40 +7102,10 @@ ili9341 display modules with:
 </net>
 <net name="3V3" class="1">
 <segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="176.53" y1="82.45" x2="177.8" y2="82.45" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="176.53" y1="72.29" x2="177.8" y2="72.29" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="177.8" y1="72.29" x2="177.8" y2="77.74" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="177.8" y1="77.74" x2="177.8" y2="82.45" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="182.88" y1="77.74" x2="177.8" y2="77.74" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<junction x="177.8" y="77.74" grouprefs="MLX90640"/>
-<label x="179.88" y="79.28" size="1.27" layer="95" grouprefs="MLX90640"/>
-</segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="VDD"/>
-<wire x1="189.23" y1="52.07" x2="191.77" y2="52.07" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="192.04" y="53.34" size="1.27" layer="95" grouprefs="MLX90640"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
-<wire x1="119.38" y1="116.84" x2="129.54" y2="116.84" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="129.54" y="119.38" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
 <pinref part="U$2" gate="G$1" pin="3V3"/>
 <wire x1="172.72" y1="113.03" x2="172.72" y2="96.52" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="172.72" y1="96.52" x2="170.18" y2="96.52" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="165.1" y="96.52" size="1.778" layer="95" grouprefs="ESP32"/>
-</segment>
-<segment>
-<pinref part="C1" gate="G$1" pin="1"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="193.2" y1="46.96" x2="205.36" y2="46.96" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="205.36" y1="46.96" x2="205.36" y2="50.1" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="205.36" y1="50.1" x2="205.28" y2="50.18" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<junction x="205.36" y="46.96" grouprefs="MLX90640"/>
-<label x="206.28" y="51.18" size="1.778" layer="95" grouprefs="MLX90640"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -7085,47 +7133,72 @@ ili9341 display modules with:
 <pinref part="R5" gate="G$1" pin="1"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="VCC"/>
+<wire x1="124.968" y1="113.284" x2="135.128" y2="113.284" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="115.824" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="C3" gate="G$1" pin="1"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="209.71" y1="55.596" x2="216.87" y2="55.596" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="216.71" y="57.436" size="1.27" layer="95" grouprefs="MLX90640"/>
+</segment>
+<segment>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="195.04" y1="81.086" x2="196.31" y2="81.086" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="195.04" y1="70.926" x2="196.31" y2="70.926" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="196.31" y1="70.926" x2="196.31" y2="76.376" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="196.31" y1="76.376" x2="196.31" y2="81.086" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="201.39" y1="76.376" x2="196.31" y2="76.376" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<junction x="196.31" y="76.376" grouprefs="MLX90640"/>
+<label x="198.39" y="77.916" size="1.27" layer="95" grouprefs="MLX90640"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="VDD"/>
+<wire x1="205.74" y1="60.706" x2="208.28" y2="60.706" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="208.55" y="61.976" size="1.27" layer="95" grouprefs="MLX90640"/>
+</segment>
 </net>
 <net name="SD_SCK" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_SCK_32"/>
-<wire x1="99.06" y1="142.24" x2="99.06" y2="167.64" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="101.6" y="167.64" size="1.27" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_SCK_24"/>
-<wire x1="76.2" y1="142.24" x2="76.2" y2="152.4" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="66.04" y="152.4" size="1.27" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="IO14"/>
 <wire x1="200.66" y1="113.03" x2="200.66" y2="101.6" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="200.66" y1="101.6" x2="215.9" y2="101.6" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="218.44" y="101.6" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_SCK_32"/>
+<wire x1="107.188" y1="138.684" x2="107.188" y2="164.084" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="107.188" y="164.084" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_SCK_24"/>
+<wire x1="79.248" y1="138.684" x2="79.248" y2="148.844" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="71.628" y="148.844" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SD_SCK_28"/>
+<wire x1="91.948" y1="138.684" x2="91.948" y2="151.384" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="91.948" y="151.384" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TFT_LED" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_LED"/>
-<wire x1="109.22" y1="83.82" x2="116.84" y2="76.2" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="116.84" y1="76.2" x2="129.54" y2="76.2" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="132.08" y="76.2" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="IO17"/>
 <wire x1="198.12" y1="148.59" x2="198.12" y2="160.02" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="198.12" y1="160.02" x2="215.9" y2="160.02" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="218.44" y="160.02" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TFT_LED"/>
+<wire x1="114.808" y1="80.264" x2="122.428" y2="72.644" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="122.428" y1="72.644" x2="135.128" y2="72.644" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="72.644" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TFT_CS" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_CS"/>
-<wire x1="106.68" y1="83.82" x2="106.68" y2="81.28" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="106.68" y1="81.28" x2="116.84" y2="71.12" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="116.84" y1="71.12" x2="129.54" y2="71.12" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="132.08" y="71.12" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="247.65" y1="82.45" x2="238.76" y2="82.45" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
@@ -7138,45 +7211,45 @@ ili9341 display modules with:
 <wire x1="195.58" y1="162.56" x2="215.9" y2="162.56" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="218.44" y="162.56" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TFT_CS"/>
+<wire x1="112.268" y1="80.264" x2="112.268" y2="77.724" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="112.268" y1="77.724" x2="122.428" y2="67.564" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="122.428" y1="67.564" x2="135.128" y2="67.564" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="67.564" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TFT_RESET" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_RESET"/>
-<wire x1="104.14" y1="83.82" x2="104.14" y2="78.74" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="104.14" y1="78.74" x2="116.84" y2="66.04" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="116.84" y1="66.04" x2="129.54" y2="66.04" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="132.08" y="66.04" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="EN"/>
 <wire x1="175.26" y1="113.03" x2="175.26" y2="93.98" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="175.26" y1="93.98" x2="170.18" y2="93.98" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="154.94" y="93.98" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TFT_RESET"/>
+<wire x1="109.728" y1="80.264" x2="109.728" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="109.728" y1="75.184" x2="122.428" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="122.428" y1="62.484" x2="135.128" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="62.484" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TFT_DC" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_DC"/>
-<wire x1="101.6" y1="83.82" x2="101.6" y2="76.2" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="101.6" y1="76.2" x2="116.84" y2="60.96" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="116.84" y1="60.96" x2="129.54" y2="60.96" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="132.08" y="60.96" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="IO16"/>
 <wire x1="200.66" y1="148.59" x2="200.66" y2="157.48" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="200.66" y1="157.48" x2="215.9" y2="157.48" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="218.44" y="157.48" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TFT_DC"/>
+<wire x1="107.188" y1="80.264" x2="107.188" y2="72.644" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="107.188" y1="72.644" x2="122.428" y2="57.404" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="122.428" y1="57.404" x2="135.128" y2="57.404" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="57.404" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TFT_MOSI" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_SDI(MOSI)"/>
-<wire x1="99.06" y1="83.82" x2="99.06" y2="73.66" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="99.06" y1="73.66" x2="116.84" y2="55.88" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="116.84" y1="55.88" x2="129.54" y2="55.88" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="132.08" y="55.88" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="247.65" y1="74.83" x2="238.76" y2="74.83" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
@@ -7184,48 +7257,48 @@ ili9341 display modules with:
 <label x="233.68" y="76.2" size="1.27" layer="95" grouprefs="TFT_VSPI_PULL_UP"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="TOUCH_SDI(MOSI)"/>
-<wire x1="81.28" y1="83.82" x2="81.28" y2="81.28" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="81.28" y1="81.28" x2="78.74" y2="78.74" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="78.74" y1="78.74" x2="78.74" y2="66.04" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="81.28" y="53.34" size="1.778" layer="95" rot="R90" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
 <pinref part="U$2" gate="G$1" pin="IO23"/>
 <wire x1="175.26" y1="148.59" x2="175.26" y2="154.94" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="175.26" y1="154.94" x2="165.1" y2="154.94" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="154.94" y="154.94" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TFT_SDI(MOSI)"/>
+<wire x1="104.648" y1="80.264" x2="104.648" y2="70.104" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="104.648" y1="70.104" x2="122.428" y2="52.324" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="122.428" y1="52.324" x2="135.128" y2="52.324" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="52.324" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TOUCH_SDI(MOSI)"/>
+<wire x1="86.868" y1="80.264" x2="86.868" y2="77.724" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="86.868" y1="77.724" x2="84.328" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="84.328" y1="75.184" x2="84.328" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="86.868" y="49.784" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TFT_SCK" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_SCK"/>
-<wire x1="96.52" y1="83.82" x2="96.52" y2="71.12" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="96.52" y1="71.12" x2="116.84" y2="50.8" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="116.84" y1="50.8" x2="129.54" y2="50.8" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="132.08" y="50.8" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="TOUCH_CKL(SCK)"/>
-<wire x1="86.36" y1="83.82" x2="88.9" y2="81.28" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="88.9" y1="81.28" x2="88.9" y2="66.04" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="91.44" y="53.34" size="1.778" layer="95" rot="R90" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="IO18"/>
 <wire x1="193.04" y1="148.59" x2="193.04" y2="165.1" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="193.04" y1="165.1" x2="215.9" y2="165.1" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="218.44" y="165.1" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TFT_SCK"/>
+<wire x1="102.108" y1="80.264" x2="102.108" y2="67.564" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="102.108" y1="67.564" x2="122.428" y2="47.244" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="122.428" y1="47.244" x2="135.128" y2="47.244" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="47.244" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TOUCH_CKL(SCK)"/>
+<wire x1="91.948" y1="80.264" x2="94.488" y2="77.724" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="94.488" y1="77.724" x2="94.488" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="97.028" y="49.784" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TFT_MISO" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_SDO(MISO)"/>
-<wire x1="93.98" y1="83.82" x2="93.98" y2="68.58" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="93.98" y1="68.58" x2="116.84" y2="45.72" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="116.84" y1="45.72" x2="129.54" y2="45.72" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="132.08" y="45.72" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="247.65" y1="67.21" x2="238.76" y2="67.21" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
@@ -7233,51 +7306,55 @@ ili9341 display modules with:
 <label x="233.68" y="68.58" size="1.27" layer="95" grouprefs="TFT_VSPI_PULL_UP"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="TOUCH_SDO(MISO)"/>
-<wire x1="78.74" y1="83.82" x2="73.66" y2="78.74" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="73.66" y1="78.74" x2="73.66" y2="66.04" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="76.2" y="53.34" size="1.778" layer="95" rot="R90" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
-<segment>
 <pinref part="U$2" gate="G$1" pin="IO19"/>
 <wire x1="190.5" y1="148.59" x2="190.5" y2="162.56" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="190.5" y1="162.56" x2="165.1" y2="162.56" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="154.94" y="162.56" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TFT_SDO(MISO)"/>
+<wire x1="99.568" y1="80.264" x2="99.568" y2="65.024" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="99.568" y1="65.024" x2="122.428" y2="42.164" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="122.428" y1="42.164" x2="135.128" y2="42.164" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="137.668" y="42.164" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TOUCH_SDO(MISO)"/>
+<wire x1="84.328" y1="80.264" x2="79.248" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="79.248" y1="75.184" x2="79.248" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="81.788" y="49.784" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TOUCH_IRQ" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TOUCH_IRQ"/>
-<wire x1="73.66" y1="83.82" x2="68.58" y2="78.74" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<wire x1="68.58" y1="78.74" x2="58.42" y2="78.74" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="53.34" y="76.2" size="1.778" layer="95" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="SVN"/>
 <wire x1="180.34" y1="113.03" x2="180.34" y2="93.98" width="0.1524" layer="91" grouprefs="ESP32"/>
 <wire x1="180.34" y1="93.98" x2="215.9" y2="93.98" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="218.44" y="93.98" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TOUCH_IRQ"/>
+<wire x1="79.248" y1="80.264" x2="74.168" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="74.168" y1="75.184" x2="64.008" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="58.928" y="72.644" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 <net name="TOUCH_CS" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TOUCH_CS"/>
-<wire x1="83.82" y1="83.82" x2="83.82" y2="66.04" width="0.1524" layer="91" grouprefs="SCREEN_TOUCH_SD"/>
-<label x="86.36" y="53.34" size="1.778" layer="95" rot="R90" grouprefs="SCREEN_TOUCH_SD"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="IO27"/>
 <wire x1="198.12" y1="113.03" x2="198.12" y2="99.06" width="0.1524" layer="91" grouprefs="ESP32"/>
 <label x="218.44" y="99.06" size="1.778" layer="95" grouprefs="ESP32"/>
 <wire x1="198.12" y1="99.06" x2="215.9" y2="99.06" width="0.1524" layer="91" grouprefs="ESP32"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TOUCH_CS"/>
+<wire x1="89.408" y1="80.264" x2="89.408" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="91.948" y="49.784" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
 </net>
 </nets>
 </sheet>
 </sheets>
-<errors>
-<approved hash="104,1,234.95,135.89,U1,VDD,3V3,,,"/>
-</errors>
 </schematic>
 </drawing>
 <compatibility>
