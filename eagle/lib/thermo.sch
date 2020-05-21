@@ -5178,10 +5178,10 @@ ili9341 display modules with:
 <connect gate="G$1" pin="TFT_SDO(MISO)" pad="TFT_SDO(MISO)"/>
 <connect gate="G$1" pin="TOUCH_CKL(SCK)" pad="TOUCH_CLK(SCK)"/>
 <connect gate="G$1" pin="TOUCH_CS" pad="TOUCH_CS"/>
-<connect gate="G$1" pin="TOUCH_IRQ" pad="VCC!"/>
+<connect gate="G$1" pin="TOUCH_IRQ" pad="TOUCH_IRQ"/>
 <connect gate="G$1" pin="TOUCH_SDI(MOSI)" pad="TOUCH_DIN"/>
 <connect gate="G$1" pin="TOUCH_SDO(MISO)" pad="TOUCH_DO"/>
-<connect gate="G$1" pin="VCC" pad="TOUCH_IRQ"/>
+<connect gate="G$1" pin="VCC" pad="VCC!"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6827,13 +6827,18 @@ naming: grid - package width</description>
 <schematic_group name="PULL_UP5"/>
 <schematic_group name="MLX8"/>
 <schematic_group name="ILI9341_24_28_2"/>
-<schematic_group name="TFT_TOUCH_CS"/>
 <schematic_group name="I2C_PULL_UP7"/>
 <schematic_group name="MLX9"/>
 <schematic_group name="PULL_UP6"/>
 <schematic_group name="I2C_PULL_UP8"/>
 <schematic_group name="MLX10"/>
 <schematic_group name="PULL_UP7"/>
+<schematic_group name="MLX11"/>
+<schematic_group name="ILI9341_24_28_3"/>
+<schematic_group name="TFT_TOUCH_SD"/>
+<schematic_group name="I2C_PULL_UP9"/>
+<schematic_group name="MLX12"/>
+<schematic_group name="PULL_UP8"/>
 <schematic_group name="MLX90640"/>
 </groups>
 <parts>
@@ -6896,26 +6901,26 @@ naming: grid - package width</description>
 <attribute name="NAME" x="256.54" y="35.2314" size="1.27" layer="95" rot="R180"/>
 <attribute name="VALUE" x="256.54" y="40.032" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="U$1" gate="G$1" x="79.248" y="100.584" smashed="yes" grouprefs="TFT_TOUCH_CS"/>
-<instance part="C3" gate="G$1" x="209.71" y="53.056" smashed="yes" grouprefs="MLX90640">
-<attribute name="NAME" x="211.234" y="53.437" size="1.778" layer="95"/>
-<attribute name="VALUE" x="211.234" y="48.357" size="1.778" layer="96"/>
+<instance part="U$1" gate="G$1" x="73.66" y="101.346" smashed="yes" grouprefs="TFT_TOUCH_SD"/>
+<instance part="C3" gate="G$1" x="202.09" y="55.596" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="203.614" y="55.977" size="1.778" layer="95"/>
+<attribute name="VALUE" x="203.614" y="50.897" size="1.778" layer="96"/>
 </instance>
-<instance part="C4" gate="G$1" x="216.87" y="53.056" smashed="yes" grouprefs="MLX90640">
-<attribute name="NAME" x="218.394" y="53.437" size="1.778" layer="95"/>
-<attribute name="VALUE" x="218.394" y="48.357" size="1.778" layer="96"/>
+<instance part="C4" gate="G$1" x="209.25" y="55.596" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="210.774" y="55.977" size="1.778" layer="95"/>
+<attribute name="VALUE" x="210.774" y="50.897" size="1.778" layer="96"/>
 </instance>
-<instance part="R9" gate="G$1" x="189.96" y="70.926" smashed="yes" rot="R180" grouprefs="MLX90640">
-<attribute name="NAME" x="193.77" y="69.4274" size="1.27" layer="95" rot="R180"/>
-<attribute name="VALUE" x="193.77" y="74.228" size="1.27" layer="96" rot="R180"/>
+<instance part="R9" gate="G$1" x="182.34" y="73.466" smashed="yes" rot="R180" grouprefs="MLX90640">
+<attribute name="NAME" x="186.15" y="71.9674" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="186.15" y="76.768" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="R10" gate="G$1" x="189.96" y="81.086" smashed="yes" rot="R180" grouprefs="MLX90640">
-<attribute name="NAME" x="193.77" y="79.5874" size="1.27" layer="95" rot="R180"/>
-<attribute name="VALUE" x="193.77" y="84.388" size="1.27" layer="96" rot="R180"/>
+<instance part="R10" gate="G$1" x="182.34" y="83.626" smashed="yes" rot="R180" grouprefs="MLX90640">
+<attribute name="NAME" x="186.15" y="82.1274" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="186.15" y="86.928" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="U2" gate="G$1" x="190.5" y="55.626" smashed="yes" grouprefs="MLX90640">
-<attribute name="NAME" x="180.34" y="64.516" size="1.778" layer="95"/>
-<attribute name="VALUE" x="180.34" y="44.196" size="1.778" layer="96" align="top-left"/>
+<instance part="U2" gate="G$1" x="182.88" y="58.166" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="172.72" y="67.056" size="1.778" layer="95"/>
+<attribute name="VALUE" x="172.72" y="46.736" size="1.778" layer="96" align="top-left"/>
 </instance>
 </instances>
 <busses>
@@ -6939,21 +6944,21 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="GND"/>
-<wire x1="124.968" y1="108.204" x2="135.128" y2="108.204" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="105.664" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="119.38" y1="108.966" x2="129.54" y2="108.966" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="106.426" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="C3" gate="G$1" pin="2"/>
-<wire x1="216.87" y1="47.976" x2="209.71" y2="47.976" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="209.25" y1="50.516" x2="202.09" y2="50.516" width="0.1524" layer="91" grouprefs="MLX90640"/>
 <pinref part="U2" gate="G$1" pin="GND"/>
-<wire x1="209.71" y1="47.976" x2="205.77" y2="47.976" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="205.77" y1="47.976" x2="205.74" y2="48.006" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<junction x="209.71" y="47.976" grouprefs="MLX90640"/>
-<wire x1="216.87" y1="47.976" x2="216.87" y2="46.696" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="216.87" y1="46.696" x2="218.61" y2="44.956" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<junction x="216.87" y="47.976" grouprefs="MLX90640"/>
-<label x="218.61" y="43.956" size="1.27" layer="95" grouprefs="MLX90640"/>
+<wire x1="202.09" y1="50.516" x2="198.15" y2="50.516" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="198.15" y1="50.516" x2="198.12" y2="50.546" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<junction x="202.09" y="50.516" grouprefs="MLX90640"/>
+<wire x1="209.25" y1="50.516" x2="209.25" y2="49.236" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="209.25" y1="49.236" x2="210.99" y2="47.496" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<junction x="209.25" y="50.516" grouprefs="MLX90640"/>
+<label x="210.99" y="46.496" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -6965,15 +6970,15 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="SCL"/>
-<wire x1="175.26" y1="55.626" x2="171.45" y2="55.626" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="171.45" y1="55.626" x2="171.45" y2="56.896" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="170.91" y="58.436" size="1.27" layer="95" grouprefs="MLX90640"/>
+<wire x1="167.64" y1="58.166" x2="163.83" y2="58.166" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="163.83" y1="58.166" x2="163.83" y2="59.436" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="163.29" y="60.976" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 <segment>
 <pinref part="R9" gate="G$1" pin="2"/>
-<wire x1="184.88" y1="70.926" x2="183.61" y2="70.926" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="183.61" y1="70.926" x2="183.61" y2="72.296" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="183.53" y="73.296" size="1.27" layer="95" grouprefs="MLX90640"/>
+<wire x1="177.26" y1="73.466" x2="175.99" y2="73.466" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="175.99" y1="73.466" x2="175.99" y2="74.836" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="175.91" y="75.836" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 </net>
 <net name="SD_MISO" class="0">
@@ -6991,18 +6996,18 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_MISO_32"/>
-<wire x1="109.728" y1="138.684" x2="109.728" y2="159.004" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="109.728" y="159.004" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="104.14" y1="139.446" x2="104.14" y2="159.766" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="104.14" y="159.766" size="1.27" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_MISO_24"/>
-<wire x1="81.788" y1="138.684" x2="81.788" y2="153.924" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="74.168" y="153.924" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="76.2" y1="139.446" x2="76.2" y2="154.686" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="68.58" y="154.686" size="1.27" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_MISO_28"/>
-<wire x1="94.488" y1="138.684" x2="94.488" y2="153.924" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="94.488" y="153.924" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="88.9" y1="139.446" x2="88.9" y2="154.686" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="88.9" y="154.686" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="SD_MOSI" class="0">
@@ -7020,18 +7025,18 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_MOSI_32"/>
-<wire x1="112.268" y1="138.684" x2="112.268" y2="153.924" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="112.268" y="153.924" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="106.68" y1="139.446" x2="106.68" y2="154.686" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="106.68" y="154.686" size="1.27" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_MOSI_24"/>
-<wire x1="84.328" y1="138.684" x2="84.328" y2="159.004" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="76.708" y="159.004" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="78.74" y1="139.446" x2="78.74" y2="159.766" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="71.12" y="159.766" size="1.27" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_MOSI_28"/>
-<wire x1="97.028" y1="138.684" x2="97.028" y2="153.924" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="97.028" y="153.924" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="91.44" y1="139.446" x2="91.44" y2="154.686" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="91.44" y="154.686" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -7043,15 +7048,15 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="SDA"/>
-<wire x1="175.26" y1="53.086" x2="171.45" y2="53.086" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="171.45" y1="53.086" x2="171.45" y2="51.816" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="170.91" y="50.276" size="1.27" layer="95" grouprefs="MLX90640"/>
+<wire x1="167.64" y1="55.626" x2="163.83" y2="55.626" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="163.83" y1="55.626" x2="163.83" y2="54.356" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="163.29" y="52.816" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 <segment>
 <pinref part="R10" gate="G$1" pin="2"/>
-<wire x1="184.88" y1="81.086" x2="183.61" y2="81.086" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="183.61" y1="81.086" x2="183.61" y2="79.916" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="183.53" y="77.916" size="1.27" layer="95" grouprefs="MLX90640"/>
+<wire x1="177.26" y1="83.626" x2="175.99" y2="83.626" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="175.99" y1="83.626" x2="175.99" y2="82.456" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="175.91" y="80.456" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 </net>
 <net name="SD_CS" class="0">
@@ -7069,18 +7074,18 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_CS_32"/>
-<wire x1="114.808" y1="138.684" x2="114.808" y2="151.384" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="114.808" y="148.844" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="109.22" y1="139.446" x2="109.22" y2="152.146" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="109.22" y="149.606" size="1.27" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_CS_24"/>
-<wire x1="86.868" y1="138.684" x2="86.868" y2="164.084" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="81.788" y="164.084" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="81.28" y1="139.446" x2="81.28" y2="164.846" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="76.2" y="164.846" size="1.27" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_CS_28"/>
-<wire x1="99.568" y1="138.684" x2="99.568" y2="151.384" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="99.568" y="151.384" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="93.98" y1="139.446" x2="93.98" y2="152.146" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="93.98" y="152.146" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="+5V" class="1">
@@ -7135,30 +7140,30 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="VCC"/>
-<wire x1="124.968" y1="113.284" x2="135.128" y2="113.284" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="115.824" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="119.38" y1="114.046" x2="129.54" y2="114.046" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="116.586" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="1"/>
 <pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="209.71" y1="55.596" x2="216.87" y2="55.596" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="216.71" y="57.436" size="1.27" layer="95" grouprefs="MLX90640"/>
+<wire x1="202.09" y1="58.136" x2="209.25" y2="58.136" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="209.09" y="59.976" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 <segment>
 <pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="195.04" y1="81.086" x2="196.31" y2="81.086" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="187.42" y1="83.626" x2="188.69" y2="83.626" width="0.1524" layer="91" grouprefs="MLX90640"/>
 <pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="195.04" y1="70.926" x2="196.31" y2="70.926" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="196.31" y1="70.926" x2="196.31" y2="76.376" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="196.31" y1="76.376" x2="196.31" y2="81.086" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<wire x1="201.39" y1="76.376" x2="196.31" y2="76.376" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<junction x="196.31" y="76.376" grouprefs="MLX90640"/>
-<label x="198.39" y="77.916" size="1.27" layer="95" grouprefs="MLX90640"/>
+<wire x1="187.42" y1="73.466" x2="188.69" y2="73.466" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="188.69" y1="73.466" x2="188.69" y2="78.916" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="188.69" y1="78.916" x2="188.69" y2="83.626" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="193.77" y1="78.916" x2="188.69" y2="78.916" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<junction x="188.69" y="78.916" grouprefs="MLX90640"/>
+<label x="190.77" y="80.456" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="VDD"/>
-<wire x1="205.74" y1="60.706" x2="208.28" y2="60.706" width="0.1524" layer="91" grouprefs="MLX90640"/>
-<label x="208.55" y="61.976" size="1.27" layer="95" grouprefs="MLX90640"/>
+<wire x1="198.12" y1="63.246" x2="200.66" y2="63.246" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="200.93" y="64.516" size="1.27" layer="95" grouprefs="MLX90640"/>
 </segment>
 </net>
 <net name="SD_SCK" class="0">
@@ -7170,18 +7175,18 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_SCK_32"/>
-<wire x1="107.188" y1="138.684" x2="107.188" y2="164.084" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="107.188" y="164.084" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="101.6" y1="139.446" x2="101.6" y2="164.846" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="101.6" y="164.846" size="1.27" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_SCK_24"/>
-<wire x1="79.248" y1="138.684" x2="79.248" y2="148.844" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="71.628" y="148.844" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="73.66" y1="139.446" x2="73.66" y2="149.606" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="66.04" y="149.606" size="1.27" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SD_SCK_28"/>
-<wire x1="91.948" y1="138.684" x2="91.948" y2="151.384" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="91.948" y="151.384" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="86.36" y1="139.446" x2="86.36" y2="152.146" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="86.36" y="152.146" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TFT_LED" class="0">
@@ -7193,9 +7198,9 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TFT_LED"/>
-<wire x1="114.808" y1="80.264" x2="122.428" y2="72.644" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="122.428" y1="72.644" x2="135.128" y2="72.644" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="72.644" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="109.22" y1="81.026" x2="116.84" y2="73.406" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="116.84" y1="73.406" x2="129.54" y2="73.406" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="73.406" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TFT_CS" class="0">
@@ -7213,10 +7218,10 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TFT_CS"/>
-<wire x1="112.268" y1="80.264" x2="112.268" y2="77.724" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="112.268" y1="77.724" x2="122.428" y2="67.564" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="122.428" y1="67.564" x2="135.128" y2="67.564" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="67.564" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="106.68" y1="81.026" x2="106.68" y2="78.486" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="106.68" y1="78.486" x2="116.84" y2="68.326" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="116.84" y1="68.326" x2="129.54" y2="68.326" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="68.326" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TFT_RESET" class="0">
@@ -7228,10 +7233,10 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TFT_RESET"/>
-<wire x1="109.728" y1="80.264" x2="109.728" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="109.728" y1="75.184" x2="122.428" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="122.428" y1="62.484" x2="135.128" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="62.484" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="104.14" y1="81.026" x2="104.14" y2="75.946" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="104.14" y1="75.946" x2="116.84" y2="63.246" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="116.84" y1="63.246" x2="129.54" y2="63.246" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="63.246" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TFT_DC" class="0">
@@ -7243,10 +7248,10 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TFT_DC"/>
-<wire x1="107.188" y1="80.264" x2="107.188" y2="72.644" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="107.188" y1="72.644" x2="122.428" y2="57.404" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="122.428" y1="57.404" x2="135.128" y2="57.404" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="57.404" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="101.6" y1="81.026" x2="101.6" y2="73.406" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="101.6" y1="73.406" x2="116.84" y2="58.166" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="116.84" y1="58.166" x2="129.54" y2="58.166" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="58.166" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TFT_MOSI" class="0">
@@ -7264,17 +7269,17 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TFT_SDI(MOSI)"/>
-<wire x1="104.648" y1="80.264" x2="104.648" y2="70.104" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="104.648" y1="70.104" x2="122.428" y2="52.324" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="122.428" y1="52.324" x2="135.128" y2="52.324" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="52.324" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="99.06" y1="81.026" x2="99.06" y2="70.866" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="99.06" y1="70.866" x2="116.84" y2="53.086" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="116.84" y1="53.086" x2="129.54" y2="53.086" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="53.086" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TOUCH_SDI(MOSI)"/>
-<wire x1="86.868" y1="80.264" x2="86.868" y2="77.724" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="86.868" y1="77.724" x2="84.328" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="84.328" y1="75.184" x2="84.328" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="86.868" y="49.784" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="81.28" y1="81.026" x2="81.28" y2="78.486" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="81.28" y1="78.486" x2="78.74" y2="75.946" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="78.74" y1="75.946" x2="78.74" y2="63.246" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="81.28" y="50.546" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TFT_SCK" class="0">
@@ -7286,16 +7291,16 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TFT_SCK"/>
-<wire x1="102.108" y1="80.264" x2="102.108" y2="67.564" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="102.108" y1="67.564" x2="122.428" y2="47.244" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="122.428" y1="47.244" x2="135.128" y2="47.244" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="47.244" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="96.52" y1="81.026" x2="96.52" y2="68.326" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="96.52" y1="68.326" x2="116.84" y2="48.006" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="116.84" y1="48.006" x2="129.54" y2="48.006" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="48.006" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TOUCH_CKL(SCK)"/>
-<wire x1="91.948" y1="80.264" x2="94.488" y2="77.724" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="94.488" y1="77.724" x2="94.488" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="97.028" y="49.784" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="86.36" y1="81.026" x2="88.9" y2="78.486" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="88.9" y1="78.486" x2="88.9" y2="63.246" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="91.44" y="50.546" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TFT_MISO" class="0">
@@ -7313,16 +7318,16 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TFT_SDO(MISO)"/>
-<wire x1="99.568" y1="80.264" x2="99.568" y2="65.024" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="99.568" y1="65.024" x2="122.428" y2="42.164" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="122.428" y1="42.164" x2="135.128" y2="42.164" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="137.668" y="42.164" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="93.98" y1="81.026" x2="93.98" y2="65.786" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="93.98" y1="65.786" x2="116.84" y2="42.926" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="116.84" y1="42.926" x2="129.54" y2="42.926" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="132.08" y="42.926" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TOUCH_SDO(MISO)"/>
-<wire x1="84.328" y1="80.264" x2="79.248" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="79.248" y1="75.184" x2="79.248" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="81.788" y="49.784" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="78.74" y1="81.026" x2="73.66" y2="75.946" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="73.66" y1="75.946" x2="73.66" y2="63.246" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="76.2" y="50.546" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TOUCH_IRQ" class="0">
@@ -7334,9 +7339,9 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TOUCH_IRQ"/>
-<wire x1="79.248" y1="80.264" x2="74.168" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<wire x1="74.168" y1="75.184" x2="64.008" y2="75.184" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="58.928" y="72.644" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="73.66" y1="81.026" x2="68.58" y2="75.946" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<wire x1="68.58" y1="75.946" x2="58.42" y2="75.946" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="53.34" y="73.406" size="1.778" layer="95" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 <net name="TOUCH_CS" class="0">
@@ -7348,8 +7353,8 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="TOUCH_CS"/>
-<wire x1="89.408" y1="80.264" x2="89.408" y2="62.484" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
-<label x="91.948" y="49.784" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="83.82" y1="81.026" x2="83.82" y2="63.246" width="0.1524" layer="91" grouprefs="TFT_TOUCH_SD"/>
+<label x="86.36" y="50.546" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_SD"/>
 </segment>
 </net>
 </nets>

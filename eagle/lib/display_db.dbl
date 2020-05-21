@@ -218,10 +218,10 @@ ili9341 display modules with:
 <connect gate="G$1" pin="TFT_SDO(MISO)" pad="TFT_SDO(MISO)"/>
 <connect gate="G$1" pin="TOUCH_CKL(SCK)" pad="TOUCH_CLK(SCK)"/>
 <connect gate="G$1" pin="TOUCH_CS" pad="TOUCH_CS"/>
-<connect gate="G$1" pin="TOUCH_IRQ" pad="VCC!"/>
+<connect gate="G$1" pin="TOUCH_IRQ" pad="TOUCH_IRQ"/>
 <connect gate="G$1" pin="TOUCH_SDI(MOSI)" pad="TOUCH_DIN"/>
 <connect gate="G$1" pin="TOUCH_SDO(MISO)" pad="TOUCH_DO"/>
-<connect gate="G$1" pin="VCC" pad="TOUCH_IRQ"/>
+<connect gate="G$1" pin="VCC" pad="VCC!"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -240,6 +240,10 @@ ili9341 display modules with:
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
+<groups>
+<schematic_group name="MLX90640"/>
+<schematic_group name="ILI9341_24_28_32"/>
+</groups>
 <parts>
 <part name="U$1" library="thermo" deviceset="ILI9341_DISPLAY_SD_MODULE" device=""/>
 </parts>
@@ -378,6 +382,13 @@ ili9341 display modules with:
 <wire x1="104.14" y1="-10.16" x2="116.84" y2="-10.16" width="0.1524" layer="91"/>
 <label x="119.38" y="-10.16" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TOUCH_SDI(MOSI)"/>
+<wire x1="68.58" y1="17.78" x2="68.58" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="15.24" x2="66.04" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="12.7" x2="66.04" y2="0" width="0.1524" layer="91"/>
+<label x="68.58" y="-12.7" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="TFT_SCK" class="0">
 <segment>
@@ -386,6 +397,12 @@ ili9341 display modules with:
 <wire x1="83.82" y1="5.08" x2="104.14" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-15.24" x2="116.84" y2="-15.24" width="0.1524" layer="91"/>
 <label x="119.38" y="-15.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TOUCH_CKL(SCK)"/>
+<wire x1="73.66" y1="17.78" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="15.24" x2="76.2" y2="0" width="0.1524" layer="91"/>
+<label x="78.74" y="-12.7" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="TFT_MISO" class="0">
@@ -396,6 +413,12 @@ ili9341 display modules with:
 <wire x1="104.14" y1="-20.32" x2="116.84" y2="-20.32" width="0.1524" layer="91"/>
 <label x="119.38" y="-20.32" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="TOUCH_SDO(MISO)"/>
+<wire x1="66.04" y1="17.78" x2="60.96" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="12.7" x2="60.96" y2="0" width="0.1524" layer="91"/>
+<label x="63.5" y="-12.7" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="TOUCH_IRQ" class="0">
 <segment>
@@ -405,36 +428,11 @@ ili9341 display modules with:
 <label x="40.64" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="TOUCH_MISO" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TOUCH_SDO(MISO)"/>
-<wire x1="66.04" y1="17.78" x2="60.96" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="12.7" x2="60.96" y2="0" width="0.1524" layer="91"/>
-<label x="63.5" y="-12.7" size="1.778" layer="95" rot="R90"/>
-</segment>
-</net>
-<net name="TOUCH_MOSI" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TOUCH_SDI(MOSI)"/>
-<wire x1="68.58" y1="17.78" x2="68.58" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="15.24" x2="66.04" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="12.7" x2="66.04" y2="0" width="0.1524" layer="91"/>
-<label x="68.58" y="-12.7" size="1.778" layer="95" rot="R90"/>
-</segment>
-</net>
 <net name="TOUCH_CS" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="TOUCH_CS"/>
 <wire x1="71.12" y1="17.78" x2="71.12" y2="0" width="0.1524" layer="91"/>
 <label x="73.66" y="-12.7" size="1.778" layer="95" rot="R90"/>
-</segment>
-</net>
-<net name="TOUCH_SCK" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TOUCH_CKL(SCK)"/>
-<wire x1="73.66" y1="17.78" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="15.24" x2="76.2" y2="0" width="0.1524" layer="91"/>
-<label x="78.74" y="-12.7" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
@@ -801,7 +799,7 @@ design rules under a new name.</description>
 </elements>
 <signals>
 <signal name="3V3">
-<contactref element="U$1" pad="TOUCH_IRQ"/>
+<contactref element="U$1" pad="VCC!"/>
 </signal>
 <signal name="GND">
 <contactref element="U$1" pad="GND"/>
@@ -848,27 +846,24 @@ design rules under a new name.</description>
 </signal>
 <signal name="TFT_MOSI">
 <contactref element="U$1" pad="TFT_SDI(MOSI)"/>
+<contactref element="U$1" pad="TOUCH_DIN"/>
+<wire x1="-22.86" y1="-10.16" x2="-38.1" y2="-10.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TFT_SCK">
 <contactref element="U$1" pad="TFT_SCK"/>
+<contactref element="U$1" pad="TOUCH_CLK(SCK)"/>
+<wire x1="-27.94" y1="-10.16" x2="-35.56" y2="-10.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TFT_MISO">
 <contactref element="U$1" pad="TFT_SDO(MISO)"/>
+<contactref element="U$1" pad="TOUCH_DO"/>
+<wire x1="-20.32" y1="-10.16" x2="-30.48" y2="-10.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TOUCH_IRQ">
-<contactref element="U$1" pad="VCC!"/>
-</signal>
-<signal name="TOUCH_MISO">
-<contactref element="U$1" pad="TOUCH_DO"/>
-</signal>
-<signal name="TOUCH_MOSI">
-<contactref element="U$1" pad="TOUCH_DIN"/>
+<contactref element="U$1" pad="TOUCH_IRQ"/>
 </signal>
 <signal name="TOUCH_CS">
 <contactref element="U$1" pad="TOUCH_CS"/>
-</signal>
-<signal name="TOUCH_SCK">
-<contactref element="U$1" pad="TOUCH_CLK(SCK)"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

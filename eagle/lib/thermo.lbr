@@ -2596,10 +2596,10 @@ ili9341 display modules with:
 <connect gate="G$1" pin="TFT_SDO(MISO)" pad="TFT_SDO(MISO)"/>
 <connect gate="G$1" pin="TOUCH_CKL(SCK)" pad="TOUCH_CLK(SCK)"/>
 <connect gate="G$1" pin="TOUCH_CS" pad="TOUCH_CS"/>
-<connect gate="G$1" pin="TOUCH_IRQ" pad="VCC!"/>
+<connect gate="G$1" pin="TOUCH_IRQ" pad="TOUCH_IRQ"/>
 <connect gate="G$1" pin="TOUCH_SDI(MOSI)" pad="TOUCH_DIN"/>
 <connect gate="G$1" pin="TOUCH_SDO(MISO)" pad="TOUCH_DO"/>
-<connect gate="G$1" pin="VCC" pad="TOUCH_IRQ"/>
+<connect gate="G$1" pin="VCC" pad="VCC!"/>
 </connects>
 <technologies>
 <technology name=""/>
