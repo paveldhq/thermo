@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -79,36 +79,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 &lt;a href="http://diymodules.org/eagle"&gt;&lt;img src="http://www.diymodules.org/img/diymodules-lbr-image.php?v=1.8.0" alt="DIYmodules.org"&gt;&lt;/a&gt;
 &lt;/center&gt;</description>
 <packages>
-<package name="SKR1">
-<pad name="UCC" x="0" y="0" drill="0.6"/>
-<pad name="GND" x="-2.54" y="0" drill="0.6"/>
-<pad name="CS" x="-5.08" y="0" drill="0.6"/>
-<pad name="RESET" x="-7.62" y="0" drill="0.6"/>
-<pad name="DC" x="-10.16" y="0" drill="0.6"/>
-<pad name="SDI&lt;MOSI&gt;" x="-12.7" y="0" drill="0.6"/>
-<pad name="SCK" x="-15.24" y="0" drill="0.6"/>
-<pad name="LED" x="-17.78" y="0" drill="0.6"/>
-<pad name="SDO&lt;MISO&gt;" x="-20.32" y="0" drill="0.6"/>
-<pad name="T_CLK" x="-22.86" y="0" drill="0.6"/>
-<pad name="T_CS" x="-25.4" y="0" drill="0.6"/>
-<pad name="T_DIN" x="-27.94" y="0" drill="0.6"/>
-<pad name="T_DO" x="-30.48" y="0" drill="0.6"/>
-<wire x1="-38.8" y1="77.6" x2="4.85" y2="77.6" width="0.1524" layer="21"/>
-<wire x1="4.85" y1="77.6" x2="4.85" y2="-1.2954" width="0.1524" layer="21"/>
-<pad name="T_IRQ" x="-33.02" y="0" drill="0.6" shape="square"/>
-<pad name="SD-SCK" x="-20.32" y="76.2" drill="0.6"/>
-<pad name="SD_MISO" x="-17.78" y="76.2" drill="0.6"/>
-<pad name="SD_CS" x="-12.7" y="76.2" drill="0.6"/>
-<pad name="SD_MOSI" x="-15.24" y="76.2" drill="0.6"/>
-<wire x1="-38.8" y1="77.6" x2="-38.8" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-38.8" y1="-1.27" x2="4.8768" y2="-1.27" width="0.1524" layer="21"/>
-<hole x="-36.5252" y="75.5396" drill="3.2"/>
-<hole x="2.5654" y="75.5396" drill="3.2"/>
-<hole x="2.76" y="6.44" drill="3.2"/>
-<hole x="-36.8" y="6.44" drill="3.2"/>
-<text x="3" y="27" size="1.778" layer="25" rot="R90">&lt;Name</text>
-<text x="3" y="39" size="1.778" layer="27" rot="R90">&lt;Value</text>
-</package>
 <package name="ESP32-DEVKITC">
 <pad name="1" x="-22.87" y="-11.42" drill="1" diameter="1.9304"/>
 <pad name="2" x="-20.33" y="-11.42" drill="1" diameter="1.9304"/>
@@ -233,30 +203,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </package>
 </packages>
 <symbols>
-<symbol name="NEWILI9341">
-<pin name="T_IRQ" x="0" y="0" length="middle" rot="R90"/>
-<pin name="T_DO" x="2.54" y="0" length="middle" rot="R90"/>
-<pin name="T_DIN" x="5.08" y="0" length="middle" rot="R90"/>
-<pin name="T_CS" x="7.62" y="0" length="middle" rot="R90"/>
-<pin name="T_CKL" x="10.16" y="0" length="middle" rot="R90"/>
-<pin name="SDO&lt;MISO&gt;" x="12.7" y="0" length="middle" rot="R90"/>
-<pin name="TFT_LED" x="15.24" y="0" length="middle" rot="R90"/>
-<pin name="TFT_SCK" x="17.78" y="0" length="middle" rot="R90"/>
-<pin name="SDI&lt;MOSI&gt;" x="20.32" y="0" length="middle" rot="R90"/>
-<pin name="TFT_DC" x="22.86" y="0" length="middle" rot="R90"/>
-<pin name="TFT_RESET" x="25.4" y="0" length="middle" rot="R90"/>
-<pin name="TFT_CS" x="27.94" y="0" length="middle" rot="R90"/>
-<pin name="GND" x="30.48" y="0" length="middle" rot="R90"/>
-<pin name="VCC" x="33.02" y="0" length="middle" rot="R90"/>
-<pin name="SD_SCK" x="10.16" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MISO" x="12.7" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_MOSI" x="15.24" y="38.1" length="middle" rot="R270"/>
-<pin name="SD_CS" x="17.78" y="38.1" length="middle" rot="R270"/>
-<wire x1="0" y1="5.08" x2="33.02" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="33.02" y1="5.08" x2="33.02" y2="33.02" width="0.1524" layer="94"/>
-<wire x1="33.02" y1="33.02" x2="0" y2="33.02" width="0.1524" layer="94"/>
-<wire x1="0" y1="33.02" x2="0" y2="5.08" width="0.1524" layer="94"/>
-</symbol>
 <symbol name="ESP32-DEVKITC">
 <wire x1="-25.4" y1="-12.7" x2="-25.4" y2="12.7" width="0.254" layer="94"/>
 <wire x1="-25.4" y1="12.7" x2="25.4" y2="12.7" width="0.254" layer="94"/>
@@ -317,38 +263,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="ILI9341">
-<gates>
-<gate name="G$1" symbol="NEWILI9341" x="22.86" y="-20.32"/>
-</gates>
-<devices>
-<device name="" package="SKR1">
-<connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="SDI&lt;MOSI&gt;" pad="SDI&lt;MOSI&gt;"/>
-<connect gate="G$1" pin="SDO&lt;MISO&gt;" pad="SDO&lt;MISO&gt;"/>
-<connect gate="G$1" pin="SD_CS" pad="SD_CS"/>
-<connect gate="G$1" pin="SD_MISO" pad="SD_MISO"/>
-<connect gate="G$1" pin="SD_MOSI" pad="SD_MOSI"/>
-<connect gate="G$1" pin="SD_SCK" pad="SD-SCK"/>
-<connect gate="G$1" pin="TFT_CS" pad="CS"/>
-<connect gate="G$1" pin="TFT_DC" pad="DC"/>
-<connect gate="G$1" pin="TFT_LED" pad="LED"/>
-<connect gate="G$1" pin="TFT_RESET" pad="RESET"/>
-<connect gate="G$1" pin="TFT_SCK" pad="SCK"/>
-<connect gate="G$1" pin="T_CKL" pad="T_CLK"/>
-<connect gate="G$1" pin="T_CS" pad="T_CS"/>
-<connect gate="G$1" pin="T_DIN" pad="T_DIN"/>
-<connect gate="G$1" pin="T_DO" pad="T_DO"/>
-<connect gate="G$1" pin="T_IRQ" pad="T_IRQ"/>
-<connect gate="G$1" pin="VCC" pad="UCC"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="ESP32DEVKITC">
 <gates>
 <gate name="G$1" symbol="ESP32-DEVKITC" x="0" y="0"/>
@@ -5112,12 +5026,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </technologies>
 </device>
 </devices>
-<spice>
-<pinmapping spiceprefix="R">
-<pinmap gate="G$1" pin="1" pinorder="1"/>
-<pinmap gate="G$1" pin="2" pinorder="2"/>
-</pinmapping>
-</spice>
 </deviceset>
 </devicesets>
 </library>
@@ -6720,416 +6628,763 @@ naming: grid - package width</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="thermo">
+<description>&lt;b&gt;DIY Modules for Arduino, Raspberry Pi, CubieBoard etc.&lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+The library contains a list of symbols and footprints for popular, cheap and easy-to-use electronic modules.&lt;br&gt;
+The modules are intend to work with microprocessor-based platforms such as &lt;a href="http://arduino.cc"&gt;Arduino&lt;/a&gt;, &lt;a href="http://raspberrypi.org/"&gt;Raspberry Pi&lt;/a&gt;, &lt;a href="http://cubieboard.org/"&gt;CubieBoard&lt;/a&gt;, &lt;a href="http://beagleboard.org/"&gt;BeagleBone&lt;/a&gt; and many others. There are many manufacturers of the modules in the world. Almost all of them can be bought on &lt;a href="ebay.com"&gt;ebay.com&lt;/a&gt;.&lt;br&gt;
+&lt;br&gt;
+By using this library, you can design a PCB for devices created with usage of modules. Even if you do not need to create PCB design, you can also use the library to quickly document your work by drawing schematics of devices built by you.&lt;br&gt;
+&lt;br&gt;
+The latest version, examples, photos and much more can be found at: &lt;b&gt;&lt;a href="http://diymodules.org/eagle"&gt;diymodules.org/eagle&lt;/a&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailto:eagle@diymodules.org"&gt;eagle@diymodules.org&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+&lt;i&gt;Version: 1.8.0 (2017-Jul-02)&lt;/i&gt;&lt;br&gt;
+&lt;i&gt;Created by: Miroslaw Brudnowski&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+&lt;i&gt;Released under the Creative Commons Attribution 4.0 International License: &lt;a href="http://creativecommons.org/licenses/by/4.0"&gt;http://creativecommons.org/licenses/by/4.0&lt;/a&gt;&lt;/i&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+&lt;a href="http://diymodules.org/eagle"&gt;&lt;img src="http://www.diymodules.org/img/diymodules-lbr-image.php?v=1.8.0" alt="DIYmodules.org"&gt;&lt;/a&gt;
+&lt;/center&gt;</description>
+<packages>
+<package name="ILI9341_DISPLAY_SD_MODULE">
+<pad name="TOUCH_IRQ" x="-0.02" y="0" drill="1" diameter="1.9304"/>
+<pad name="GND" x="-30.48" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_CS" x="-27.94" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_RESET" x="-25.4" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_DC" x="-22.86" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SDI(MOSI)" x="-20.32" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SCK" x="-17.78" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_LED" x="-15.24" y="0" drill="1" diameter="1.9304"/>
+<pad name="TFT_SDO(MISO)" x="-12.7" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_CLK(SCK)" x="-10.16" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_CS" x="-7.62" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_DIN" x="-5.08" y="0" drill="1" diameter="1.9304"/>
+<pad name="TOUCH_DO" x="-2.54" y="0" drill="1" diameter="1.9304"/>
+<wire x1="-43.8" y1="87.76" x2="10.85" y2="87.76" width="0.1524" layer="21"/>
+<wire x1="10.85" y1="87.76" x2="10.877" y2="-1.2694" width="0.1524" layer="21" locked="yes"/>
+<pad name="VCC" x="-33" y="0" drill="1" diameter="1.9304" shape="square"/>
+<wire x1="-43.8" y1="87.76" x2="-43.8" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-43.8" y1="-1.27" x2="10.8768" y2="-1.27" width="0.1524" layer="21" locked="yes"/>
+<text x="-10.97" y="19.38" size="1.778" layer="25" rot="R90">Supports common 2.4"; 2.8" and 3.2"
+ili9341 display modules with:
+ - Resistive touch
+ - SD card slot</text>
+<text x="-19.812" y="66.77" size="1.016" layer="21" rot="R90">SD_CS</text>
+<text x="-17.272" y="66.246" size="1.016" layer="21" rot="R90">SD_MOSI</text>
+<text x="-14.732" y="66.246" size="1.016" layer="21" rot="R90">SD_MISO</text>
+<text x="-12.192" y="66.754" size="1.016" layer="21" rot="R90">SD_SCK</text>
+<text x="0.508" y="2.54" size="1.016" layer="21" rot="R90">T_IRQ</text>
+<text x="-2.032" y="2.54" size="1.016" layer="21" rot="R90">T_MISO</text>
+<text x="-4.826" y="2.54" size="1.016" layer="21" rot="R90">T_MOSI</text>
+<text x="-9.652" y="2.54" size="1.016" layer="21" rot="R90">T_CLK</text>
+<text x="-12.192" y="2.54" size="1.016" layer="21" rot="R90">SDO&lt;MISO&gt;</text>
+<text x="-14.732" y="2.54" size="1.016" layer="21" rot="R90">LED</text>
+<text x="-17.272" y="2.54" size="1.016" layer="21" rot="R90">SCK</text>
+<text x="-19.812" y="2.54" size="1.016" layer="21" rot="R90">SDI&lt;MOSI&gt;</text>
+<text x="-22.352" y="2.54" size="1.016" layer="21" rot="R90">TFT_DC</text>
+<text x="-24.892" y="2.54" size="1.016" layer="21" rot="R90">RESET</text>
+<text x="-27.432" y="2.54" size="1.016" layer="21" rot="R90">TFT_CS</text>
+<text x="-29.972" y="2.54" size="1.016" layer="21" rot="R90">GND</text>
+<text x="-32.512" y="2.54" size="1.016" layer="21" rot="R90">VCC</text>
+<text x="-7.112" y="2.54" size="1.016" layer="21" rot="R90">T_CS</text>
+<pad name="SD_SCK_32" x="-12.72" y="84.8" drill="1" diameter="1.9304"/>
+<pad name="SD_MISO_32" x="-15.26" y="84.8" drill="1" diameter="1.9304"/>
+<pad name="SD_MOSI_32" x="-17.8" y="84.8" drill="1" diameter="1.9304"/>
+<pad name="SD_CS_32" x="-20.34" y="84.8" drill="1" diameter="1.9304" shape="square"/>
+<pad name="SD_SCK_28" x="-12.72" y="81.5" drill="1" diameter="1.9304"/>
+<pad name="SD_MISO_28" x="-15.26" y="81.5" drill="1" diameter="1.9304"/>
+<pad name="SD_MOSI_28" x="-17.8" y="81.5" drill="1" diameter="1.9304"/>
+<pad name="SD_CS_28" x="-20.34" y="81.5" drill="1" diameter="1.9304" shape="square"/>
+<pad name="SD_SCK_24" x="-12.72" y="74.18" drill="1" diameter="1.9304"/>
+<pad name="SD_MISO_24" x="-15.26" y="74.18" drill="1" diameter="1.9304"/>
+<pad name="SD_MOSI_24" x="-17.8" y="74.18" drill="1" diameter="1.9304"/>
+<pad name="SD_CS_24" x="-20.34" y="74.18" drill="1" diameter="1.9304" shape="square"/>
+<hole x="8.01" y="1.5" drill="3.2"/>
+<hole x="-40.99" y="1.5" drill="3.2"/>
+<hole x="-40.99" y="85" drill="3.2"/>
+<hole x="7.51" y="85" drill="3.2"/>
+<hole x="4.99" y="81.5" drill="3.2"/>
+<hole x="-38.35" y="81.5" drill="3.2"/>
+<hole x="-38.5" y="5.5" drill="3.2"/>
+<hole x="5.5" y="5.5" drill="3.2"/>
+<hole x="-35" y="6" drill="3.2"/>
+<hole x="2" y="6" drill="3.2"/>
+<hole x="-35" y="73" drill="3.2"/>
+<hole x="2" y="73" drill="3.2"/>
+<text x="-40.64" y="19.05" size="1.778" layer="21" rot="R90">Size info taken from http://www.lcdwiki.com/</text>
+</package>
+</packages>
+<symbols>
+<symbol name="ILI9341_DISPLAY_SD_MODULE">
+<pin name="TOUCH_IRQ" x="0" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_SDO(MISO)" x="5.08" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_SDI(MOSI)" x="7.62" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_CS" x="10.16" y="-20.32" length="middle" rot="R90"/>
+<pin name="TOUCH_CKL(SCK)" x="12.7" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SDO(MISO)" x="20.32" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_LED" x="35.56" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SCK" x="22.86" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_SDI(MOSI)" x="25.4" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_DC" x="27.94" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_RESET" x="30.48" y="-20.32" length="middle" rot="R90"/>
+<pin name="TFT_CS" x="33.02" y="-20.32" length="middle" rot="R90"/>
+<pin name="GND" x="45.72" y="7.62" length="middle" rot="R180"/>
+<pin name="VCC" x="45.72" y="12.7" length="middle" rot="R180"/>
+<pin name="SD_SCK_24" x="0" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO_24" x="2.54" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI_24" x="5.08" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS_24" x="7.62" y="38.1" length="middle" rot="R270"/>
+<wire x1="-5.08" y1="-15.24" x2="40.64" y2="-15.24" width="0.1524" layer="94"/>
+<wire x1="40.64" y1="-15.24" x2="40.64" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="40.64" y1="33.02" x2="-5.08" y2="33.02" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="33.02" x2="-5.08" y2="-15.24" width="0.1524" layer="94"/>
+<pin name="SD_SCK_32" x="27.94" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS_32" x="35.56" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI_32" x="33.02" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO_32" x="30.48" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_SCK_28" x="12.7" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MISO_28" x="15.24" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_MOSI_28" x="17.78" y="38.1" length="middle" rot="R270"/>
+<pin name="SD_CS_28" x="20.32" y="38.1" length="middle" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ILI9341_DISPLAY_SD_MODULE">
+<gates>
+<gate name="G$1" symbol="ILI9341_DISPLAY_SD_MODULE" x="22.86" y="-20.32"/>
+</gates>
+<devices>
+<device name="" package="ILI9341_DISPLAY_SD_MODULE">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="SD_CS_24" pad="SD_CS_24"/>
+<connect gate="G$1" pin="SD_CS_28" pad="SD_CS_28"/>
+<connect gate="G$1" pin="SD_CS_32" pad="SD_CS_32"/>
+<connect gate="G$1" pin="SD_MISO_24" pad="SD_MISO_24"/>
+<connect gate="G$1" pin="SD_MISO_28" pad="SD_MISO_28"/>
+<connect gate="G$1" pin="SD_MISO_32" pad="SD_MISO_32"/>
+<connect gate="G$1" pin="SD_MOSI_24" pad="SD_MOSI_24"/>
+<connect gate="G$1" pin="SD_MOSI_28" pad="SD_MOSI_28"/>
+<connect gate="G$1" pin="SD_MOSI_32" pad="SD_MOSI_32"/>
+<connect gate="G$1" pin="SD_SCK_24" pad="SD_SCK_24"/>
+<connect gate="G$1" pin="SD_SCK_28" pad="SD_SCK_28"/>
+<connect gate="G$1" pin="SD_SCK_32" pad="SD_SCK_32"/>
+<connect gate="G$1" pin="TFT_CS" pad="TFT_CS"/>
+<connect gate="G$1" pin="TFT_DC" pad="TFT_DC"/>
+<connect gate="G$1" pin="TFT_LED" pad="TFT_LED"/>
+<connect gate="G$1" pin="TFT_RESET" pad="TFT_RESET"/>
+<connect gate="G$1" pin="TFT_SCK" pad="TFT_SCK"/>
+<connect gate="G$1" pin="TFT_SDI(MOSI)" pad="TFT_SDI(MOSI)"/>
+<connect gate="G$1" pin="TFT_SDO(MISO)" pad="TFT_SDO(MISO)"/>
+<connect gate="G$1" pin="TOUCH_CKL(SCK)" pad="TOUCH_CLK(SCK)"/>
+<connect gate="G$1" pin="TOUCH_CS" pad="TOUCH_CS"/>
+<connect gate="G$1" pin="TOUCH_IRQ" pad="TOUCH_IRQ"/>
+<connect gate="G$1" pin="TOUCH_SDI(MOSI)" pad="TOUCH_DIN"/>
+<connect gate="G$1" pin="TOUCH_SDO(MISO)" pad="TOUCH_DO"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.4064" drill="0">
+<class number="0" name="default" width="0" drill="0">
 </class>
-<class number="1" name="supplay" width="0.8128" drill="0">
+<class number="1" name="supply" width="0.8128" drill="0">
 </class>
 </classes>
+<groups>
+<schematic_group name="I2C_PULL_UP1"/>
+<schematic_group name="MLX1"/>
+<schematic_group name="POWER_SUPPLY"/>
+<schematic_group name="ESP32"/>
+<schematic_group name="TFT_VSPI_PULL_UP"/>
+<schematic_group name="SD_HSPI_PULL_UP"/>
+<schematic_group name="I2C_PULL_UP2"/>
+<schematic_group name="MLX2"/>
+<schematic_group name="PULL_UP1"/>
+<schematic_group name="I2C_PULL_UP3"/>
+<schematic_group name="MLX3"/>
+<schematic_group name="PULL_UP2"/>
+<schematic_group name="I2C_PULL_UP4"/>
+<schematic_group name="MLX4"/>
+<schematic_group name="PULL_UP3"/>
+<schematic_group name="MLX5"/>
+<schematic_group name="ILI9341_24_28_1"/>
+<schematic_group name="I2C_PULL_UP5"/>
+<schematic_group name="MLX6"/>
+<schematic_group name="PULL_UP4"/>
+<schematic_group name="I2C_PULL_UP6"/>
+<schematic_group name="MLX7"/>
+<schematic_group name="PULL_UP5"/>
+<schematic_group name="MLX8"/>
+<schematic_group name="ILI9341_24_28_2"/>
+<schematic_group name="I2C_PULL_UP7"/>
+<schematic_group name="MLX9"/>
+<schematic_group name="PULL_UP6"/>
+<schematic_group name="I2C_PULL_UP8"/>
+<schematic_group name="MLX10"/>
+<schematic_group name="PULL_UP7"/>
+<schematic_group name="MLX11"/>
+<schematic_group name="ILI9341_24_28_3"/>
+<schematic_group name="I2C_PULL_UP9"/>
+<schematic_group name="MLX12"/>
+<schematic_group name="PULL_UP8"/>
+<schematic_group name="I2C_PULL_UP10"/>
+<schematic_group name="MLX13"/>
+<schematic_group name="PULL_UP9"/>
+<schematic_group name="I2C_PULL_UP"/>
+<schematic_group name="MLX14"/>
+<schematic_group name="ILI9341_24_28_4"/>
+<schematic_group name="I2C_PULL_UP11"/>
+<schematic_group name="MLX15"/>
+<schematic_group name="PULL_UP10"/>
+<schematic_group name="I2C_PULL_UP12"/>
+<schematic_group name="MLX16"/>
+<schematic_group name="PULL_UP11"/>
+<schematic_group name="MLX90640"/>
+<schematic_group name="MLX17"/>
+<schematic_group name="ILI9341_24_28_5"/>
+<schematic_group name="TFT_TOUCH_CS"/>
+</groups>
 <parts>
-<part name="U$1" library="teploblinEkran" deviceset="ILI9341" device=""/>
-<part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
+<part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="5V"/>
 <part name="U$2" library="teploblinEkran" deviceset="ESP32DEVKITC" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="50K"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="50K"/>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="50K"/>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="50K"/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="50K"/>
-<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="50K"/>
-<part name="C1" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="10U"/>
-<part name="C2" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="100n"/>
-<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="1K"/>
+<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
+<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
+<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="100K"/>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="1K"/>
-<part name="U1" library="teploblinEkran" deviceset="MLX90640ESF-BAB-000-TU" device=""/>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="1K"/>
+<part name="C3" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="10U"/>
+<part name="C4" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="100n"/>
+<part name="U2" library="teploblinEkran" deviceset="MLX90640ESF-BAB-000-TU" device=""/>
+<part name="U$3" library="thermo" deviceset="ILI9341_DISPLAY_SD_MODULE" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="U$1" gate="G$1" x="39.37" y="44.45" smashed="yes"/>
-<instance part="JP1" gate="G$1" x="156.21" y="30.48" smashed="yes">
-<attribute name="NAME" x="149.86" y="36.195" size="1.778" layer="95"/>
-<attribute name="VALUE" x="149.86" y="25.4" size="1.778" layer="96"/>
+<instance part="JP1" gate="G$1" x="257.556" y="153.924" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="NAME" x="251.206" y="162.179" size="1.778" layer="95"/>
+<attribute name="VALUE" x="251.206" y="148.844" size="1.778" layer="96"/>
 </instance>
-<instance part="U$2" gate="G$1" x="127" y="62.23" smashed="yes">
-<attribute name="NAME" x="100.33" y="67.31" size="1.27" layer="95" rot="R90"/>
+<instance part="U$2" gate="G$1" x="195.58" y="130.81" smashed="yes" grouprefs="ESP32">
+<attribute name="NAME" x="168.91" y="135.89" size="1.27" layer="95" rot="R90"/>
 </instance>
-<instance part="P+1" gate="1" x="167.64" y="35.56" smashed="yes">
-<attribute name="VALUE" x="165.1" y="30.48" size="1.778" layer="96" rot="R90"/>
+<instance part="P+1" gate="1" x="263.906" y="164.084" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="VALUE" x="261.366" y="166.624" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND1" gate="1" x="167.64" y="27.94" smashed="yes">
-<attribute name="VALUE" x="165.1" y="25.4" size="1.778" layer="96"/>
+<instance part="GND1" gate="1" x="263.906" y="146.304" smashed="yes" grouprefs="POWER_SUPPLY">
+<attribute name="VALUE" x="256.286" y="143.764" size="1.778" layer="96"/>
 </instance>
-<instance part="R1" gate="G$1" x="64.77" y="1.27" smashed="yes">
-<attribute name="NAME" x="60.96" y="2.7686" size="1.778" layer="95"/>
-<attribute name="VALUE" x="60.96" y="-2.032" size="1.778" layer="96"/>
+<instance part="R1" gate="G$1" x="217.424" y="51.462" smashed="yes" rot="R180" grouprefs="TFT_VSPI_PULL_UP">
+<attribute name="NAME" x="221.234" y="49.9634" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="221.234" y="54.764" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="R2" gate="G$1" x="57.15" y="-5.08" smashed="yes">
-<attribute name="NAME" x="53.34" y="-3.5814" size="1.778" layer="95"/>
-<attribute name="VALUE" x="53.34" y="-8.382" size="1.778" layer="96"/>
+<instance part="R2" gate="G$1" x="217.424" y="43.842" smashed="yes" rot="R180" grouprefs="TFT_VSPI_PULL_UP">
+<attribute name="NAME" x="221.234" y="42.3434" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="221.234" y="47.144" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="R3" gate="G$1" x="76.2" y="-2.54" smashed="yes">
-<attribute name="NAME" x="72.39" y="-1.0414" size="1.778" layer="95"/>
-<attribute name="VALUE" x="72.39" y="-5.842" size="1.778" layer="96"/>
+<instance part="R3" gate="G$1" x="217.424" y="36.222" smashed="yes" rot="R180" grouprefs="TFT_VSPI_PULL_UP">
+<attribute name="NAME" x="221.234" y="34.7234" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="221.234" y="39.524" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="R4" gate="G$1" x="57.15" y="99.06" smashed="yes">
-<attribute name="NAME" x="53.34" y="100.5586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="53.34" y="95.758" size="1.778" layer="96"/>
+<instance part="R4" gate="G$1" x="173.736" y="51.208" smashed="yes" rot="R180" grouprefs="SD_HSPI_PULL_UP">
+<attribute name="NAME" x="177.546" y="49.7094" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="177.546" y="54.51" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="R5" gate="G$1" x="59.69" y="106.68" smashed="yes">
-<attribute name="NAME" x="55.88" y="108.1786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="55.88" y="103.378" size="1.778" layer="96"/>
+<instance part="R5" gate="G$1" x="173.736" y="43.588" smashed="yes" rot="R180" grouprefs="SD_HSPI_PULL_UP">
+<attribute name="NAME" x="177.546" y="42.0894" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="177.546" y="46.89" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="R6" gate="G$1" x="63.5" y="86.36" smashed="yes">
-<attribute name="NAME" x="59.69" y="87.8586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="59.69" y="83.058" size="1.778" layer="96"/>
+<instance part="R6" gate="G$1" x="173.736" y="35.968" smashed="yes" rot="R180" grouprefs="SD_HSPI_PULL_UP">
+<attribute name="NAME" x="177.546" y="34.4694" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="177.546" y="39.27" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="C1" gate="G$1" x="89.06" y="140.94" smashed="yes">
-<attribute name="NAME" x="90.584" y="141.321" size="1.778" layer="95"/>
-<attribute name="VALUE" x="90.584" y="136.241" size="1.778" layer="96"/>
+<instance part="R8" gate="G$1" x="222.726" y="73.72" smashed="yes" rot="R180" grouprefs="I2C_PULL_UP">
+<attribute name="NAME" x="226.536" y="72.2214" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="226.536" y="77.022" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="C2" gate="G$1" x="99.22" y="140.94" smashed="yes">
-<attribute name="NAME" x="100.744" y="141.321" size="1.778" layer="95"/>
-<attribute name="VALUE" x="100.744" y="136.241" size="1.778" layer="96"/>
+<instance part="R7" gate="G$1" x="222.726" y="83.88" smashed="yes" rot="R180" grouprefs="I2C_PULL_UP">
+<attribute name="NAME" x="226.536" y="82.3814" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="226.536" y="87.182" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="R7" gate="G$1" x="69.85" y="153.57" smashed="yes">
-<attribute name="NAME" x="66.04" y="155.0686" size="1.778" layer="95"/>
-<attribute name="VALUE" x="66.04" y="150.268" size="1.778" layer="96"/>
+<instance part="C3" gate="G$1" x="193.708" y="73.63" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="195.232" y="74.011" size="1.778" layer="95"/>
+<attribute name="VALUE" x="195.232" y="68.931" size="1.778" layer="96"/>
 </instance>
-<instance part="R8" gate="G$1" x="69.85" y="161.19" smashed="yes">
-<attribute name="NAME" x="66.04" y="162.6886" size="1.778" layer="95"/>
-<attribute name="VALUE" x="66.04" y="157.888" size="1.778" layer="96"/>
+<instance part="C4" gate="G$1" x="200.868" y="73.63" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="202.392" y="74.011" size="1.778" layer="95"/>
+<attribute name="VALUE" x="202.392" y="68.931" size="1.778" layer="96"/>
 </instance>
-<instance part="U1" gate="G$1" x="69.85" y="140.97" smashed="yes">
-<attribute name="NAME" x="59.69" y="149.86" size="1.778" layer="95"/>
-<attribute name="VALUE" x="59.69" y="129.54" size="1.778" layer="96" align="top-left"/>
+<instance part="U2" gate="G$1" x="174.498" y="76.2" smashed="yes" grouprefs="MLX90640">
+<attribute name="NAME" x="164.338" y="85.09" size="1.778" layer="95"/>
+<attribute name="VALUE" x="164.338" y="64.77" size="1.778" layer="96" align="top-left"/>
 </instance>
+<instance part="U$3" gate="G$1" x="71.12" y="102.362" smashed="yes" grouprefs="TFT_TOUCH_CS"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
-<pinref part="JP1" gate="G$1" pin="2"/>
-<pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="153.67" y1="30.48" x2="167.64" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="167.64" y1="30.48" x2="189.23" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="189.23" y1="30.48" x2="189.23" y2="87.63" width="0.1524" layer="91"/>
-<junction x="167.64" y="30.48"/>
-<wire x1="189.23" y1="87.63" x2="119.38" y2="87.63" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="GND@32"/>
-<wire x1="119.38" y1="87.63" x2="119.38" y2="80.01" width="0.1524" layer="91"/>
-<label x="116.84" y="81.28" size="1.778" layer="95"/>
+<pinref part="U$2" gate="G$1" pin="GND@38"/>
+<wire x1="172.72" y1="148.59" x2="172.72" y2="152.4" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="172.72" y1="152.4" x2="165.1" y2="152.4" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="154.94" y="152.4" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
 <segment>
-<pinref part="C1" gate="G$1" pin="2"/>
-<pinref part="U1" gate="G$1" pin="GND"/>
-<wire x1="89.06" y1="135.86" x2="85.09" y2="135.86" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="135.86" x2="85.09" y2="133.35" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="99.22" y1="135.86" x2="99.22" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="99.22" y1="134.62" x2="85.09" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="134.62" x2="85.09" y2="133.35" width="0.1524" layer="91"/>
-<junction x="85.09" y="133.35"/>
-<wire x1="85.09" y1="133.35" x2="85.09" y2="105.41" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="105.41" x2="104.14" y2="105.41" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="105.41" x2="104.14" y2="80.01" width="0.1524" layer="91"/>
-<label x="101.6" y="81.28" size="1.778" layer="95"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="263.906" y1="148.844" x2="263.906" y2="153.924" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<pinref part="JP1" gate="G$1" pin="2"/>
+<wire x1="263.906" y1="153.924" x2="255.016" y2="153.924" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="255.016" y1="153.924" x2="241.046" y2="153.924" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<junction x="255.016" y="153.924" grouprefs="POWER_SUPPLY"/>
+<label x="241.046" y="148.844" size="1.778" layer="95" grouprefs="POWER_SUPPLY"/>
+</segment>
+<segment>
+<pinref part="C4" gate="G$1" pin="2"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="200.868" y1="68.55" x2="193.708" y2="68.55" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<pinref part="U2" gate="G$1" pin="GND"/>
+<wire x1="193.708" y1="68.55" x2="189.768" y2="68.55" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="189.768" y1="68.55" x2="189.738" y2="68.58" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<junction x="193.708" y="68.55" grouprefs="MLX90640"/>
+<wire x1="200.868" y1="68.55" x2="200.868" y2="67.27" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="200.868" y1="67.27" x2="202.608" y2="65.53" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<junction x="200.868" y="68.55" grouprefs="MLX90640"/>
+<label x="202.608" y="64.53" size="1.27" layer="95" grouprefs="MLX90640"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="GND"/>
+<wire x1="116.84" y1="109.982" x2="127" y2="109.982" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="107.442" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="SCL" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO22"/>
+<wire x1="177.8" y1="148.59" x2="177.8" y2="157.48" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="177.8" y1="157.48" x2="165.1" y2="157.48" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="154.94" y="157.48" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="217.646" y1="73.72" x2="216.376" y2="73.72" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<wire x1="216.376" y1="73.72" x2="216.376" y2="75.09" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<label x="216.296" y="76.09" size="1.27" layer="95" grouprefs="I2C_PULL_UP"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="SCL"/>
+<wire x1="159.258" y1="76.2" x2="155.448" y2="76.2" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="155.448" y1="76.2" x2="155.448" y2="77.47" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="154.908" y="79.01" size="1.27" layer="95" grouprefs="MLX90640"/>
+</segment>
+</net>
+<net name="SD_MISO" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO26"/>
+<wire x1="195.58" y1="113.03" x2="195.58" y2="96.52" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="195.58" y1="96.52" x2="215.9" y2="96.52" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="96.52" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<wire x1="168.656" y1="35.968" x2="159.766" y2="35.968" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<wire x1="159.766" y1="35.968" x2="159.766" y2="37.338" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<label x="154.686" y="37.338" size="1.27" layer="95" grouprefs="SD_HSPI_PULL_UP"/>
+<pinref part="R6" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_MISO_32"/>
+<wire x1="101.6" y1="140.462" x2="101.6" y2="160.782" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="101.6" y="160.782" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_MISO_24"/>
+<wire x1="73.66" y1="140.462" x2="73.66" y2="155.702" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="66.04" y="155.702" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_MISO_28"/>
+<wire x1="86.36" y1="140.462" x2="86.36" y2="155.702" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="86.36" y="155.702" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="SD_MOSI" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO13"/>
+<wire x1="208.28" y1="113.03" x2="208.28" y2="104.14" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="208.28" y1="104.14" x2="215.9" y2="104.14" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="104.14" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<wire x1="168.656" y1="43.588" x2="159.766" y2="43.588" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<wire x1="159.766" y1="43.588" x2="159.766" y2="44.958" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<label x="154.686" y="44.958" size="1.27" layer="95" grouprefs="SD_HSPI_PULL_UP"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_MOSI_32"/>
+<wire x1="104.14" y1="140.462" x2="104.14" y2="155.702" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="104.14" y="155.702" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_MOSI_24"/>
+<wire x1="76.2" y1="140.462" x2="76.2" y2="160.782" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="68.58" y="160.782" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_MOSI_28"/>
+<wire x1="88.9" y1="140.462" x2="88.9" y2="155.702" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="88.9" y="155.702" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="SDA" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO21"/>
+<wire x1="185.42" y1="148.59" x2="185.42" y2="160.02" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="185.42" y1="160.02" x2="165.1" y2="160.02" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="154.94" y="160.02" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="217.646" y1="83.88" x2="216.376" y2="83.88" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<wire x1="216.376" y1="83.88" x2="216.376" y2="82.71" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<label x="216.296" y="80.71" size="1.27" layer="95" grouprefs="I2C_PULL_UP"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="SDA"/>
+<wire x1="159.258" y1="73.66" x2="155.448" y2="73.66" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<wire x1="155.448" y1="73.66" x2="155.448" y2="72.39" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="154.908" y="70.85" size="1.27" layer="95" grouprefs="MLX90640"/>
+</segment>
+</net>
+<net name="SD_CS" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO15"/>
+<wire x1="210.82" y1="148.59" x2="210.82" y2="154.94" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="210.82" y1="154.94" x2="215.9" y2="154.94" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="154.94" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<wire x1="168.656" y1="51.208" x2="159.766" y2="51.208" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<wire x1="159.766" y1="51.208" x2="159.766" y2="52.578" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<label x="154.686" y="52.578" size="1.27" layer="95" grouprefs="SD_HSPI_PULL_UP"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_CS_32"/>
+<wire x1="106.68" y1="140.462" x2="106.68" y2="153.162" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="106.68" y="150.622" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_CS_24"/>
+<wire x1="78.74" y1="140.462" x2="78.74" y2="165.862" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="73.66" y="165.862" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_CS_28"/>
+<wire x1="91.44" y1="140.462" x2="91.44" y2="153.162" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="91.44" y="153.162" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
 </segment>
 </net>
 <net name="+5V" class="1">
 <segment>
 <pinref part="P+1" gate="1" pin="+5V"/>
+<wire x1="263.906" y1="161.544" x2="263.906" y2="156.464" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
 <pinref part="JP1" gate="G$1" pin="1"/>
-<wire x1="153.67" y1="33.02" x2="167.64" y2="33.02" width="0.1524" layer="91"/>
-<junction x="153.67" y="33.02"/>
-<wire x1="153.67" y1="44.45" x2="153.67" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="263.906" y1="156.464" x2="255.016" y2="156.464" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<wire x1="255.016" y1="156.464" x2="241.046" y2="156.464" width="0.1524" layer="91" grouprefs="POWER_SUPPLY"/>
+<junction x="255.016" y="156.464" grouprefs="POWER_SUPPLY"/>
+<label x="241.046" y="159.004" size="1.778" layer="95" grouprefs="POWER_SUPPLY"/>
+</segment>
+<segment>
 <pinref part="U$2" gate="G$1" pin="5V"/>
-<wire x1="149.86" y1="44.45" x2="153.67" y2="44.45" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="113.03" x2="218.44" y2="109.22" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="218.44" y1="109.22" x2="226.06" y2="109.22" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="226.06" y="109.22" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
 </net>
-<net name="N$2" class="1">
+<net name="3V3" class="1">
 <segment>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
 <pinref part="U$2" gate="G$1" pin="3V3"/>
-<wire x1="72.39" y1="44.45" x2="104.14" y2="44.45" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="69.85" y1="1.27" x2="104.14" y2="1.27" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="1.27" x2="104.14" y2="44.45" width="0.1524" layer="91"/>
-<junction x="104.14" y="44.45"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="62.23" y1="-5.08" x2="104.14" y2="-5.08" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="-5.08" x2="104.14" y2="44.45" width="0.1524" layer="91"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="81.28" y1="-2.54" x2="104.14" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="-2.54" x2="104.14" y2="44.45" width="0.1524" layer="91"/>
-<pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="68.58" y1="86.36" x2="100.33" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="100.33" y1="86.36" x2="100.33" y2="41.91" width="0.1524" layer="91"/>
-<wire x1="100.33" y1="41.91" x2="104.14" y2="41.91" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="62.23" y1="99.06" x2="81.28" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="99.06" x2="81.28" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="38.1" x2="104.14" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="38.1" x2="104.14" y2="44.45" width="0.1524" layer="91"/>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="64.77" y1="106.68" x2="74.93" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="74.93" y1="106.68" x2="74.93" y2="41.91" width="0.1524" layer="91"/>
-<wire x1="74.93" y1="41.91" x2="100.33" y2="41.91" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="41.91" x2="104.14" y2="44.45" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="113.03" x2="172.72" y2="96.52" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="172.72" y1="96.52" x2="170.18" y2="96.52" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="165.1" y="96.52" size="1.778" layer="95" grouprefs="ESP32"/>
 </segment>
-</net>
-<net name="N$4" class="1">
 <segment>
-<pinref part="U$1" gate="G$1" pin="TFT_CS"/>
-<wire x1="67.31" y1="44.45" x2="67.31" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="67.31" y1="40.64" x2="85.09" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="40.64" x2="85.09" y2="82.55" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO5"/>
-<wire x1="85.09" y1="82.55" x2="127" y2="82.55" width="0.1524" layer="91"/>
-<wire x1="127" y1="82.55" x2="127" y2="80.01" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="67.31" y1="44.45" x2="67.31" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="67.31" y1="-2.54" x2="71.12" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="67.31" y="44.45"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_RESET"/>
-<wire x1="64.77" y1="44.45" x2="64.77" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="64.77" y1="33.02" x2="106.68" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="EN"/>
-<wire x1="106.68" y1="33.02" x2="106.68" y2="44.45" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_DC"/>
-<wire x1="62.23" y1="44.45" x2="62.23" y2="34.29" width="0.1524" layer="91"/>
-<wire x1="62.23" y1="34.29" x2="96.52" y2="34.29" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="34.29" x2="96.52" y2="85.09" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="85.09" x2="132.08" y2="85.09" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO16"/>
-<wire x1="132.08" y1="85.09" x2="132.08" y2="80.01" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$7" class="1">
-<segment>
-<pinref part="U$1" gate="G$1" pin="SDI&lt;MOSI&gt;"/>
-<wire x1="59.69" y1="44.45" x2="59.69" y2="29.21" width="0.1524" layer="91"/>
-<wire x1="59.69" y1="29.21" x2="83.82" y2="29.21" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="29.21" x2="83.82" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO23"/>
-<wire x1="83.82" y1="83.82" x2="106.68" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="83.82" x2="106.68" y2="80.01" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="T_DIN"/>
-<wire x1="44.45" y1="44.45" x2="44.45" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="44.45" y1="10.16" x2="87.63" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="87.63" y1="10.16" x2="87.63" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="87.63" y1="88.9" x2="106.68" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="88.9" x2="106.68" y2="80.01" width="0.1524" layer="91"/>
-<junction x="106.68" y="80.01"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="59.69" y1="1.27" x2="59.69" y2="44.45" width="0.1524" layer="91"/>
-<junction x="59.69" y="44.45"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_SCK"/>
-<wire x1="57.15" y1="44.45" x2="57.15" y2="24.13" width="0.1524" layer="91"/>
-<wire x1="57.15" y1="24.13" x2="90.17" y2="24.13" width="0.1524" layer="91"/>
-<wire x1="90.17" y1="24.13" x2="90.17" y2="92.71" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO18"/>
-<wire x1="90.17" y1="92.71" x2="124.46" y2="92.71" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="92.71" x2="124.46" y2="80.01" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="T_CKL"/>
-<wire x1="49.53" y1="44.45" x2="49.53" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="49.53" y1="27.94" x2="99.06" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="27.94" x2="99.06" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="96.52" x2="124.46" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="96.52" x2="124.46" y2="80.01" width="0.1524" layer="91"/>
-<junction x="124.46" y="80.01"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="TFT_LED"/>
-<wire x1="54.61" y1="44.45" x2="54.61" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="20.32" x2="88.9" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="20.32" x2="88.9" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO17"/>
-<wire x1="88.9" y1="93.98" x2="129.54" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="93.98" x2="129.54" y2="80.01" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$8" class="1">
-<segment>
-<pinref part="U$1" gate="G$1" pin="SDO&lt;MISO&gt;"/>
-<wire x1="52.07" y1="44.45" x2="52.07" y2="16.51" width="0.1524" layer="91"/>
-<wire x1="52.07" y1="16.51" x2="80.01" y2="16.51" width="0.1524" layer="91"/>
-<wire x1="80.01" y1="16.51" x2="80.01" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="80.01" y1="99.06" x2="121.92" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO19"/>
-<wire x1="121.92" y1="99.06" x2="121.92" y2="80.01" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="T_DO"/>
-<wire x1="41.91" y1="44.45" x2="41.91" y2="6.35" width="0.1524" layer="91"/>
-<wire x1="41.91" y1="6.35" x2="76.2" y2="6.35" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="6.35" x2="76.2" y2="90.17" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="90.17" x2="121.92" y2="90.17" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="90.17" x2="121.92" y2="80.01" width="0.1524" layer="91"/>
-<junction x="121.92" y="80.01"/>
 <pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="52.07" y1="44.45" x2="52.07" y2="-5.08" width="0.1524" layer="91"/>
-<junction x="52.07" y="44.45"/>
+<wire x1="222.504" y1="36.222" x2="222.504" y2="43.842" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="222.504" y1="43.842" x2="222.504" y2="51.462" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<junction x="222.504" y="43.842" grouprefs="TFT_VSPI_PULL_UP"/>
+<wire x1="222.504" y1="51.462" x2="222.504" y2="51.562" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<wire x1="222.504" y1="51.562" x2="223.774" y2="52.832" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<junction x="222.504" y="51.462" grouprefs="TFT_VSPI_PULL_UP"/>
+<wire x1="223.774" y1="52.832" x2="231.394" y2="52.832" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<label x="231.394" y="52.832" size="1.27" layer="95" grouprefs="TFT_VSPI_PULL_UP"/>
 </segment>
-</net>
-<net name="N$9" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="GND@38"/>
-<wire x1="92.71" y1="80.01" x2="104.14" y2="80.01" width="0.1524" layer="91"/>
-<wire x1="92.71" y1="36.83" x2="92.71" y2="80.01" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND"/>
-<wire x1="69.85" y1="44.45" x2="69.85" y2="36.83" width="0.1524" layer="91"/>
-<wire x1="69.85" y1="36.83" x2="92.71" y2="36.83" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="T_CS"/>
-<wire x1="46.99" y1="44.45" x2="46.99" y2="13.97" width="0.1524" layer="91"/>
-<wire x1="46.99" y1="13.97" x2="129.54" y2="13.97" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO27"/>
-<wire x1="129.54" y1="13.97" x2="129.54" y2="44.45" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$14" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="T_IRQ"/>
-<wire x1="39.37" y1="44.45" x2="39.37" y2="19.05" width="0.1524" layer="91"/>
-<wire x1="39.37" y1="19.05" x2="109.22" y2="19.05" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="SVP"/>
-<wire x1="109.22" y1="19.05" x2="109.22" y2="44.45" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$10" class="1">
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_MISO"/>
+<wire x1="178.816" y1="35.968" x2="178.816" y2="43.588" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<wire x1="178.816" y1="43.588" x2="178.816" y2="51.208" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<junction x="178.816" y="43.588" grouprefs="SD_HSPI_PULL_UP"/>
+<wire x1="178.816" y1="51.208" x2="178.816" y2="51.308" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<wire x1="178.816" y1="51.308" x2="180.086" y2="52.578" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<junction x="178.816" y="51.208" grouprefs="SD_HSPI_PULL_UP"/>
+<wire x1="180.086" y1="52.578" x2="187.706" y2="52.578" width="0.1524" layer="91" grouprefs="SD_HSPI_PULL_UP"/>
+<label x="187.706" y="52.578" size="1.27" layer="95" grouprefs="SD_HSPI_PULL_UP"/>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="52.07" y1="82.55" x2="52.07" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="52.07" y1="82.55" x2="52.07" y2="85.09" width="0.1524" layer="91"/>
-<wire x1="52.07" y1="85.09" x2="30.48" y2="85.09" width="0.1524" layer="91"/>
-<junction x="52.07" y="82.55"/>
-<wire x1="30.48" y1="85.09" x2="30.48" y2="-13.97" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO13"/>
-<wire x1="30.48" y1="-13.97" x2="139.7" y2="-13.97" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="-13.97" x2="139.7" y2="44.45" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$12" class="1">
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_MOSI"/>
 <pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="54.61" y1="82.55" x2="54.61" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="82.55" x2="54.61" y2="87.63" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="87.63" x2="27.94" y2="87.63" width="0.1524" layer="91"/>
-<junction x="54.61" y="82.55"/>
-<wire x1="27.94" y1="87.63" x2="27.94" y2="-17.78" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO26"/>
-<wire x1="27.94" y1="-17.78" x2="127" y2="-17.78" width="0.1524" layer="91"/>
-<wire x1="127" y1="-17.78" x2="127" y2="44.45" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$13" class="1">
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_CS"/>
 <pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="57.15" y1="82.55" x2="57.15" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="57.15" y1="86.36" x2="58.42" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO15"/>
-<wire x1="57.15" y1="82.55" x2="142.24" y2="82.55" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="82.55" x2="142.24" y2="80.01" width="0.1524" layer="91"/>
-<junction x="57.15" y="82.55"/>
 </segment>
-</net>
-<net name="N$18" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="SD_SCK"/>
-<wire x1="49.53" y1="82.55" x2="35.56" y2="82.55" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="82.55" x2="35.56" y2="-11.43" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO14"/>
-<wire x1="35.56" y1="-11.43" x2="132.08" y2="-11.43" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="-11.43" x2="132.08" y2="44.45" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$15" class="1">
-<segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="U1" gate="G$1" pin="SCL"/>
-<wire x1="64.77" y1="161.19" x2="54.61" y2="161.19" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="161.19" x2="54.61" y2="140.97" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="140.97" x2="35.56" y2="140.97" width="0.1524" layer="91"/>
-<junction x="54.61" y="140.97"/>
-<wire x1="35.56" y1="140.97" x2="35.56" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="119.38" x2="109.22" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="IO22"/>
-<wire x1="109.22" y1="119.38" x2="109.22" y2="80.01" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$16" class="1">
-<segment>
-<pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="U1" gate="G$1" pin="VDD"/>
-<wire x1="74.93" y1="161.19" x2="85.09" y2="161.19" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="161.19" x2="85.09" y2="146.05" width="0.1524" layer="91"/>
-<pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="74.93" y1="153.57" x2="85.09" y2="153.57" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="153.57" x2="85.09" y2="146.05" width="0.1524" layer="91"/>
-<junction x="85.09" y="146.05"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="89.06" y1="143.48" x2="85.09" y2="143.48" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="143.48" x2="85.09" y2="146.05" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="99.22" y1="143.48" x2="99.22" y2="144.78" width="0.1524" layer="91"/>
-<wire x1="99.22" y1="144.78" x2="85.09" y2="144.78" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="144.78" x2="85.09" y2="146.05" width="0.1524" layer="91"/>
-<wire x1="85.09" y1="146.05" x2="105.41" y2="146.05" width="0.1524" layer="91"/>
-<wire x1="105.41" y1="146.05" x2="105.41" y2="102.87" width="0.1524" layer="91"/>
-<wire x1="105.41" y1="102.87" x2="93.98" y2="102.87" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="102.87" x2="93.98" y2="52.07" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="52.07" x2="104.14" y2="52.07" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="52.07" x2="104.14" y2="44.45" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$17" class="1">
 <segment>
 <pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="64.77" y1="153.57" x2="53.34" y2="153.57" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="153.57" x2="53.34" y2="138.43" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="SDA"/>
-<wire x1="53.34" y1="138.43" x2="54.61" y2="138.43" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="138.43" x2="54.61" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="54.61" y1="114.3" x2="116.84" y2="114.3" width="0.1524" layer="91"/>
-<junction x="54.61" y="138.43"/>
-<pinref part="U$2" gate="G$1" pin="IO21"/>
-<wire x1="116.84" y1="114.3" x2="116.84" y2="80.01" width="0.1524" layer="91"/>
+<wire x1="227.806" y1="83.88" x2="229.076" y2="83.88" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="227.806" y1="73.72" x2="229.076" y2="73.72" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<wire x1="229.076" y1="73.72" x2="229.076" y2="79.17" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<wire x1="229.076" y1="79.17" x2="229.076" y2="83.88" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<wire x1="234.156" y1="79.17" x2="229.076" y2="79.17" width="0.1524" layer="91" grouprefs="I2C_PULL_UP"/>
+<junction x="229.076" y="79.17" grouprefs="I2C_PULL_UP"/>
+<label x="231.156" y="80.71" size="1.27" layer="95" grouprefs="I2C_PULL_UP"/>
+</segment>
+<segment>
+<pinref part="C3" gate="G$1" pin="1"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="193.708" y1="76.17" x2="200.868" y2="76.17" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="200.708" y="78.01" size="1.27" layer="95" grouprefs="MLX90640"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="VDD"/>
+<wire x1="189.738" y1="81.28" x2="192.278" y2="81.28" width="0.1524" layer="91" grouprefs="MLX90640"/>
+<label x="192.548" y="82.55" size="1.27" layer="95" grouprefs="MLX90640"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="VCC"/>
+<wire x1="116.84" y1="115.062" x2="127" y2="115.062" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="117.602" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="SD_SCK" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO14"/>
+<wire x1="200.66" y1="113.03" x2="200.66" y2="101.6" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="200.66" y1="101.6" x2="215.9" y2="101.6" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="101.6" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_SCK_32"/>
+<wire x1="99.06" y1="140.462" x2="99.06" y2="165.862" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="99.06" y="165.862" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_SCK_24"/>
+<wire x1="71.12" y1="140.462" x2="71.12" y2="150.622" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="63.5" y="150.622" size="1.27" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SD_SCK_28"/>
+<wire x1="83.82" y1="140.462" x2="83.82" y2="153.162" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="83.82" y="153.162" size="1.27" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TFT_LED" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO17"/>
+<wire x1="198.12" y1="148.59" x2="198.12" y2="160.02" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="198.12" y1="160.02" x2="215.9" y2="160.02" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="160.02" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TFT_LED"/>
+<wire x1="106.68" y1="82.042" x2="114.3" y2="74.422" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="114.3" y1="74.422" x2="127" y2="74.422" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="74.422" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TFT_CS" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="212.344" y1="51.462" x2="203.454" y2="51.462" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<wire x1="203.454" y1="51.462" x2="203.454" y2="52.832" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<label x="198.374" y="52.832" size="1.27" layer="95" grouprefs="TFT_VSPI_PULL_UP"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO5"/>
+<wire x1="195.58" y1="148.59" x2="195.58" y2="162.56" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="195.58" y1="162.56" x2="215.9" y2="162.56" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="162.56" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TFT_CS"/>
+<wire x1="104.14" y1="82.042" x2="104.14" y2="79.502" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="104.14" y1="79.502" x2="114.3" y2="69.342" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="114.3" y1="69.342" x2="127" y2="69.342" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="69.342" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TFT_RESET" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="EN"/>
+<wire x1="175.26" y1="113.03" x2="175.26" y2="93.98" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="175.26" y1="93.98" x2="170.18" y2="93.98" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="154.94" y="93.98" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TFT_RESET"/>
+<wire x1="101.6" y1="82.042" x2="101.6" y2="76.962" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="101.6" y1="76.962" x2="114.3" y2="64.262" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="114.3" y1="64.262" x2="127" y2="64.262" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="64.262" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TFT_DC" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO16"/>
+<wire x1="200.66" y1="148.59" x2="200.66" y2="157.48" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="200.66" y1="157.48" x2="215.9" y2="157.48" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="157.48" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TFT_DC"/>
+<wire x1="99.06" y1="82.042" x2="99.06" y2="74.422" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="99.06" y1="74.422" x2="114.3" y2="59.182" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="114.3" y1="59.182" x2="127" y2="59.182" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="59.182" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TFT_MOSI" class="0">
+<segment>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="212.344" y1="43.842" x2="203.454" y2="43.842" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<wire x1="203.454" y1="43.842" x2="203.454" y2="45.212" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<label x="198.374" y="45.212" size="1.27" layer="95" grouprefs="TFT_VSPI_PULL_UP"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO23"/>
+<wire x1="175.26" y1="148.59" x2="175.26" y2="154.94" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="175.26" y1="154.94" x2="165.1" y2="154.94" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="154.94" y="154.94" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TOUCH_SDI(MOSI)"/>
+<wire x1="78.74" y1="82.042" x2="78.74" y2="79.502" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="78.74" y1="79.502" x2="76.2" y2="76.962" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="76.2" y1="76.962" x2="76.2" y2="64.262" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="78.74" y="51.562" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TFT_SDI(MOSI)"/>
+<wire x1="96.52" y1="82.042" x2="96.52" y2="71.882" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="96.52" y1="71.882" x2="114.3" y2="54.102" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="114.3" y1="54.102" x2="127" y2="54.102" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="54.102" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TFT_SCK" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO18"/>
+<wire x1="193.04" y1="148.59" x2="193.04" y2="165.1" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="193.04" y1="165.1" x2="215.9" y2="165.1" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="165.1" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TOUCH_CKL(SCK)"/>
+<wire x1="83.82" y1="82.042" x2="86.36" y2="79.502" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="86.36" y1="79.502" x2="86.36" y2="64.262" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="88.9" y="51.562" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TFT_SCK"/>
+<wire x1="93.98" y1="82.042" x2="93.98" y2="69.342" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="93.98" y1="69.342" x2="114.3" y2="49.022" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="114.3" y1="49.022" x2="127" y2="49.022" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="49.022" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TFT_MISO" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="212.344" y1="36.222" x2="203.454" y2="36.222" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<wire x1="203.454" y1="36.222" x2="203.454" y2="37.592" width="0.1524" layer="91" grouprefs="TFT_VSPI_PULL_UP"/>
+<label x="198.374" y="37.592" size="1.27" layer="95" grouprefs="TFT_VSPI_PULL_UP"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO19"/>
+<wire x1="190.5" y1="148.59" x2="190.5" y2="162.56" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="190.5" y1="162.56" x2="165.1" y2="162.56" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="154.94" y="162.56" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TOUCH_SDO(MISO)"/>
+<wire x1="76.2" y1="82.042" x2="71.12" y2="76.962" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="71.12" y1="76.962" x2="71.12" y2="64.262" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="73.66" y="51.562" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TFT_SDO(MISO)"/>
+<wire x1="91.44" y1="82.042" x2="91.44" y2="66.802" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="91.44" y1="66.802" x2="114.3" y2="43.942" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="114.3" y1="43.942" x2="127" y2="43.942" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="129.54" y="43.942" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TOUCH_IRQ" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="SVN"/>
+<wire x1="180.34" y1="113.03" x2="180.34" y2="93.98" width="0.1524" layer="91" grouprefs="ESP32"/>
+<wire x1="180.34" y1="93.98" x2="215.9" y2="93.98" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="93.98" size="1.778" layer="95" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TOUCH_IRQ"/>
+<wire x1="71.12" y1="82.042" x2="66.04" y2="76.962" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<wire x1="66.04" y1="76.962" x2="55.88" y2="76.962" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="50.8" y="74.422" size="1.778" layer="95" grouprefs="TFT_TOUCH_CS"/>
+</segment>
+</net>
+<net name="TOUCH_CS" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="IO27"/>
+<wire x1="198.12" y1="113.03" x2="198.12" y2="99.06" width="0.1524" layer="91" grouprefs="ESP32"/>
+<label x="218.44" y="99.06" size="1.778" layer="95" grouprefs="ESP32"/>
+<wire x1="198.12" y1="99.06" x2="215.9" y2="99.06" width="0.1524" layer="91" grouprefs="ESP32"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="TOUCH_CS"/>
+<wire x1="81.28" y1="82.042" x2="81.28" y2="64.262" width="0.1524" layer="91" grouprefs="TFT_TOUCH_CS"/>
+<label x="83.82" y="51.562" size="1.778" layer="95" rot="R90" grouprefs="TFT_TOUCH_CS"/>
 </segment>
 </net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,189.738,81.28,U2,VDD,3V3,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
@@ -7145,11 +7400,14 @@ Since Version 8.3, EAGLE supports the association of 3D packages
 with devices in libraries, schematics, and board files. Those 3D
 packages will not be understood (or retained) with this version.
 </note>
-<note version="8.4" severity="warning">
-Since Version 8.4, EAGLE supports properties for SPICE simulation. 
-Probes in schematics and SPICE mapping objects found in parts and library devices
-will not be understood with this version. Update EAGLE to the latest version
-for full support of SPICE simulation. 
+<note version="9.5" severity="warning">
+Since Version 9.5, EAGLE supports persistent groups with
+schematics, and board files. Those persistent groups
+will not be understood (or retained) with this version.
+</note>
+<note version="8.5" severity="warning">
+Since Version 8.5, EAGLE supports locking for holes, vias, wires and polygons. 
+The locking property on all objects of these types will not be understood in this version. 
 </note>
 </compatibility>
 </eagle>
