@@ -50,3 +50,8 @@
 //вставить под воид сетап что б заработал лед ->
 //-> pinMode(LED, OUTPUT);
 //-> digitalWrite(LED, HIGH); 
+//
+///uint16_t calData[5] = { 441, 3324, 301, 3406, 7 };
+  //tft.setTouch(calData);    тач  
+
+
